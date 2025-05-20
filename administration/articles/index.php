@@ -47,7 +47,7 @@ $URL_creation = "{$racine_URL}/creation.php";
                             while ($element = mysqli_fetch_array($resultat_brut, MYSQLI_ASSOC)) {
                                 $lien_edition = "{$racine_URL}/edition.php?id={$element["id"]}";
 
-                                $date_creation = new DateTime($element["date_creation_article"]);
+                                $date_creation ["id"] = new DateTime($element["date_creation_article"]);
                                 $auteur_article = $element["auteur"];
                                 if (is_null($auteur_article)) {
                                     $auteur_article = "/";
