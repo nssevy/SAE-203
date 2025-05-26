@@ -16,6 +16,9 @@
         <li <?php if ($page_active === "medias") {
                 echo "class='active'";
             } ?>><a href="./sur-les-medias.php">SUR LES MÉDIAS</a></li>
+            <li <?php if ($page_active === "equipe-de-redaction") {
+                echo "class='active'";
+            } ?>><a href="./equipe-de-redaction.php">EQUIPE DE REDACTION</a></li>
         <li <?php if ($page_active === "contact") {
                 echo "class='active'";
             } ?>><a href="./contact.php">CONTACT</a></li>
