@@ -1,8 +1,7 @@
 <?php
 require_once('../../ressources/includes/connexion-bdd.php');
 
-$requete_brute = '
-    SELECT
+$requete_brute = " SELECT
         ar.id,
         ar.titre AS titre_article,
         ar.titre AS chapo_article,
@@ -14,8 +13,7 @@ $requete_brute = '
         CONCAT(auteur.nom, " ", auteur.prenom) AS auteur
     FROM article AS ar
     LEFT JOIN auteur
-    ON ar.auteur_id = auteur.id;
-';
+    ON ar.auteur_id = auteur.id;";
 $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
 
 $page_courante = "articles";
@@ -61,7 +59,7 @@ $URL_creation = "{$racine_URL}/creation.php";
                             while ($element = mysqli_fetch_array($resultat_brut, MYSQLI_ASSOC)) {
                                 $lien_edition = "{$racine_URL}/edition.php?id={$element["id"]}";
 
-                                $date_creation = new DateTime($element["date_creation_article"]);
+                                $date_creation ["id"] = new DateTime($element["date_creation_article"]);
                                 $auteur_article = $element["auteur"];
                                 if (is_null($auteur_article)) {
                                     $auteur_article = "/";
