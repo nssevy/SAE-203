@@ -52,6 +52,9 @@ $entite = mysqli_fetch_array($resultat_brut);
     ?>
 
     <!-- Vous allez principalement écrire votre code HTML ci-dessous -->
+        <?php
+        require_once ('../administration/auteurs/edition.php')
+        ?>
     <main class="conteneur-principal conteneur-1280">
         <h1 class="titre"><?php echo $entite["titre"]; ?></h1>
         <div class="no-design">
