@@ -10,7 +10,7 @@
         <li <?php if ($page_active === "lieux") {
                 echo "class='active'";
             } ?>><a href="./lieux-de-vie.php">LIEUX DE VIE</a></li>
-        <li <?php if ($page_active === "equipe-de-redaction.php") {
+        <li <?php if ($page_active === "equipe-de-redaction") {
                 echo "class='active'";
             } ?>><a href="./">ÉQUIPE DE RÉDACTION</a></li>
         <li <?php if ($page_active === "medias") {
