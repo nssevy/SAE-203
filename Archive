@@ -93,3 +93,6 @@ $URL_creation = "{$racine_URL}/creation.php";
 </body>
 
 </html>
+
+
+> git pull --tags origin Main

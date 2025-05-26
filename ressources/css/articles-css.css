@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .liste-articles {
     transition: transform 0.5s ease;
   }
@@ -5,3 +6,9 @@
   .liste-articles:hover {
     transform: scale(1.05);
   }
+=======
+.article :hover {
+    transition: 2s;
+}
+
+>>>>>>> c04309a4e8fdd8269915805120e186c531606e45

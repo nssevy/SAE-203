@@ -19,8 +19,8 @@ $page_active = "medias";
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/fonts.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/header.css">
-
     <link rel="stylesheet" href="./ressources/css/sur-les-medias.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body>
@@ -28,24 +28,41 @@ $page_active = "medias";
     <?php require_once('./ressources/includes/bulle.php'); ?>
 
     <main class="conteneur-principal conteneur-1280">
-        <h1 class="titre">Les actualités et les évènements important du BUT et de l'IUT CY Paris Université dans les médias</h1>
-
-        <ul class="liste-videos">
-            <li class="video-conteneur">
-                <h2 class="titre">La nouvelle réforme : le BUT MMI</h2>
-                <iframe class="video-yt" height="388" src="https://www.youtube.com/embed/oiEbQF7qfBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <section class="flex flex-wrap place-content-between py-10">
+            <h1 class="text-5xl font-semibold">Revue média</h1>
+            <div class="w-1/2">
+                <p class="text-lg">Les actualités et les évènements important du BUT et de l'IUT CY Paris Université dans les médias</p>
+            </div>
+        </section>
+        <hr class="border-t-1 border-gray-200 left-1/2 -translate-x-1/2 absolute w-[2000px]"/>
+        <ul class="grid grid-cols-3 gap-5 pt-20">
+            <li class="w-full rounded-xl">
+                <iframe class="w-full" height="388" src="https://www.youtube.com/embed/oiEbQF7qfBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="flex flex-col justify-center py-5 gap-2">
+                    <p class="uppercase text-center font-semibold text-gray-400">video</p>
+                    <h2 class="text-2xl text-center font-semibold">La nouvelle réforme</h2>
+                </div>
             </li>
-            <li class="video-conteneur">
-                <h2 class="titre">Pourquoi étudier à l'IUT CYU ?</h2>
-                <iframe class="video-yt" height="388" src="https://www.youtube.com/embed/SyjF4h2Zb7Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <li class="w-full">
+                <iframe class="w-full" height="388" src="https://www.youtube.com/embed/SyjF4h2Zb7Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="flex flex-col justify-center py-5 gap-2">
+                    <p class="uppercase text-center font-semibold text-gray-400">video</p>
+                    <h2 class="text-2xl text-center font-semibold">Pourquoi étudier à l'IUT CYU ?</h2>
+                </div>
             </li>
-            <li class="video-conteneur">
-                <h2 class="titre">Job interview en anglais au département MMI</h2>
-                <iframe class="video-yt" height="388" src="https://www.youtube.com/embed/t72pdxpNjyc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <li class="w-full">
+                <iframe class="w-full" height="388" src="https://www.youtube.com/embed/t72pdxpNjyc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="flex flex-col justify-center py-5 gap-2">
+                    <p class="uppercase text-center font-semibold text-gray-400">video</p>
+                    <h2 class="text-2xl text-center font-semibold">Job interview en anglais au département MMI</h2>
+                </div>
             </li>
-            <li class="video-conteneur">
-                <h2 class="titre">L'importance de l'IUT dans les études supérieures</h2>
-                <iframe class="video-yt" height="388" src="https://www.youtube.com/embed/xD4wshE0hEg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <li class="w-full rounded-xl">
+                <iframe class="w-full" height="388" src="https://www.youtube.com/embed/xD4wshE0hEg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="flex flex-col justify-center py-5 gap-2">
+                    <p class="uppercase text-center font-semibold text-gray-400">video</p>
+                    <h2 class="text-2xl text-center font-semibold">L'importance de l'IUT dans les études supérieures</h2>
+                </div>
             </li>
         </ul>
     </main>
