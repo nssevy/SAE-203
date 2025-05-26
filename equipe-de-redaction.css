@@ -16,3 +16,14 @@
             flex-wrap: wrap;
             gap: 20px;
 }
+.bulle-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid hsl(196, 65%, 45%);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
