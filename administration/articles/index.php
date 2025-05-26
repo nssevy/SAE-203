@@ -13,7 +13,7 @@ $requete_brute = " SELECT
         CONCAT(auteur.nom, auteur.prenom) AS auteur
     FROM article AS ar
     LEFT JOIN auteur
-    ON 'ar.auteur_id' = auteur.id;";
+    ON ar.auteur_id = auteur.id;";
 $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
 
 $page_courante = "articles";
