@@ -12,7 +12,7 @@
 ?>
 <article class="projet">
     <div class="img">
-        <img src="ressources/images/image-article.png" alt="">
+        <img src="ressources/images/SAE.jpg" alt="">
     </div>
     <section class='textes'>
         <h2 class="titre"><?php echo $listSAES[$i]; ?> • SAÉ <?php echo $numSAE; ?></h2>
