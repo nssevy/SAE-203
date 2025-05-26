@@ -49,7 +49,8 @@ $URL_creation = "{$racine_URL}/creation.php";
                             <th class="font-bold pl-8 py-5 text-left">Id</th>
                             <th class="font-bold pl-8 py-5 text-left">Titre</th>
                             <th class="font-bold pl-8 py-5 text-left">Chapô</th>
-                            <th class="font-bold pl-8 py-5 text-left">A REMPLACER</th>
+                            <th class="font-bold pl-8 py-5 text-left">Date de création</th>
+                            <th class="font-bold pl-8 py-5 text-left">Liens</th>
                             <th class="font-bold pl-8 py-5 text-left">Auteur</th>
                             <th class="pl-8 py-5"></th>
                         </tr>
