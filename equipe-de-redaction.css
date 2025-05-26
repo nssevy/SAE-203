@@ -6,4 +6,13 @@
 }
 .encadré {
     border: 8rem hsl(196, 65%, 45%);
+    padding: 10px;               /* Espace intérieur */
+    margin: 10px;                /* Espace extérieur */
+    width: 200px;                /* Largeur de la boîte */
+    border-radius: 5px;          /* Coins arrondis */
+    background-color: #f9f9f9;   /* Fond clair */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
 }
