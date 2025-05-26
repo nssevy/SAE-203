@@ -49,6 +49,22 @@ if ($formulaire_soumis) {
                             <label for="chapo" class="block text-lg font-medium text-gray-700">Chapô</label>
                             <textarea type="text" name="chapo" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus-within:border-indigo-500 focus-within:ring-indigo-500" id="chapo"></textarea>
                         </div>
+                        <div class="col-span-12">
+                            <label for="lien" class="block text-lg font-medium text-gray-700">Lien</label>
+                            <textarea type="text" name="lien" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus-within:border-indigo-500 focus-within:ring-indigo-500" id="lien"></textarea>
+                        <p class="text-sm text-gray-500">
+                                Ajouter l'URL 
+                        </p>
+                        </div>
+                        <div class="col-span-12">
+                                <label for="auteur_id" class="block text-lg font-medium text-gray-700">Auteur</label>
+                                <select name="auteur_id" id="auteur_id" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                                <option value="">Auteur inconnu</option>
+                                <?php foreach ($auteurs as $auteur) { ?>
+                                <option value="<?php echo $auteur['id']; ?>"><?php echo $auteur['prenom'] . ' ' . $auteur['nom']; ?></option>
+                                <?php } ?>
+                                </select>
+                        </div>
                         <div class="mb-3 col-md-6">
                             <button type="submit" class="rounded-md bg-indigo-600 py-2 px-4 text-lg font-medium text-white shadow-sm hover:bg-indigo-700 focus-within:bg-indigo-700">Créer</button>
                         </div>

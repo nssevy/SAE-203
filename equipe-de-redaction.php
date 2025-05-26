@@ -22,12 +22,13 @@ require_once('./ressources/includes/connexion-bdd.php');
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/header.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/accueil.css">
-        <link rel="stylesheet" href="equipe-de-redaction.css">
+    <link rel="stylesheet" href="equipe-de-redaction.css">
 
 </head>
 
 <body>
     <?php require_once('./ressources/includes/top-navigation.php'); ?>
+    <?php require_once('./ressources/includes/bulle.php'); ?> 
     <?php
     // facultatif
     // require_once('./ressources/includes/bulle.php');
@@ -35,6 +36,7 @@ require_once('./ressources/includes/connexion-bdd.php');
 
     <main class="conteneur-principal conteneur-1280">
         <!-- Vous allez principalement écrire votre code HTML dans cette balise -->
+         <h1 class="titre">Équipe de rédaction</h1>
     </main>
     <?php require_once('./ressources/includes/footer.php'); ?>
 </body>
