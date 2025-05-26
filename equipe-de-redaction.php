@@ -22,7 +22,7 @@ require_once('./ressources/includes/connexion-bdd.php');
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/header.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/accueil.css">
-    <link rel="stylesheet" href="../resssources/css/equipe-de-redaction.css">
+    <link rel="stylesheet" href="resssources/css/equipe-de-redaction.css">
 
 </head>
 
