@@ -8,8 +8,11 @@
     <p class="font-bold">MMI <?php echo (date("Y") - 1) . "-" . (date("Y") + 2); ?></p>
     <p>Projet réalisé par :</p>
     <ul class="inline-flex">
-        <li class="px-1">A compléter</li>
-        <li class="px-1">A compléter</li>
-        <li class="px-1">A compléter</li>
+        <li class="px-1">Angelina MONNEY</li>
+        <li class="px-1">Yves NSABIMANA</li>
+        <li class="px-1">Gaëlle POISSON</li>
+        <li class="px-1">Hizia RAWAT</li>
+        <li class="px-1">Fily TOURE</li>
+        <li class="px-1">Swann TUEBOEUF</li>
     </ul>
 </footer>
