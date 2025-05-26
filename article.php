@@ -4,14 +4,16 @@ $page_active = "index";
 
 require_once('./ressources/includes/connexion-bdd.php');
 
-// Code à améliorer
-$id = 10;
-$requete_brute = "
-    SELECT * FROM article
-    WHERE article.id = $id
-";
-$resultat_brut = mysqli_query($mysqli_link, $requete_brute);
-$entite = mysqli_fetch_array($resultat_brut);
+$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+
+if ($id <= 0) {
+    die("ID d'article invalide.");
+}
+$requete = $mysqli_link->prepare("SELECT * FROM article WHERE id = ?");
+$requete->bind_param("i", $id);
+$requete->execute();
+$resultat = $requete->get_result();
+$entite = $resultat->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -28,13 +30,10 @@ $entite = mysqli_fetch_array($resultat_brut);
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/header.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/accueil.css">
-<<<<<<< HEAD
     
     <link rel="stylesheet" href="./ressources/css/accueil.css">
-=======
 
     <link rel="stylesheet" href="./ressources/css/article.css">
->>>>>>> 11fd64095d4881b5a3dd78ff72a6e99c55c93734
 
     
 </head>
@@ -47,7 +46,11 @@ $entite = mysqli_fetch_array($resultat_brut);
 
     <!-- Vous allez principalement écrire votre code HTML ci-dessous -->
     <main class="conteneur-principal conteneur-1280">
-        <h1 class="titre"><?php echo $entite["titre"]; ?></h1>
+         <?php if ($entite): ?>
+            <h1 class="titre"><?php echo htmlspecialchars($entite["titre"]); ?></h1>
+        <?php else: ?>
+            <h1 class="titre">Article non trouvé</h1>
+        <?php endif; ?>
     
     </main>
     <?php require_once('./ressources/includes/footer.php'); ?>
