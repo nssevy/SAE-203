@@ -44,7 +44,7 @@ $page_courante = "messages";
                                 <td class="pl-8 p-4 font-bold" data-label="Id"><?php echo $element["id"]; ?></td>
                                 <td class="pl-8 p-4" data-label="Nom"><?php echo $element["nom"]; ?></td>
                                 <td class="pl-8 p-4" data-label="Prénom"><?php echo $element["prenom"]; ?></td>
-                                <td class="pl-8 p-4"data-label="Message"><?php echo $element["message"]; ?></td>
+                                <td class="pl-8 p-4"data-label="message"><?php echo $element["message"]; ?></td>
                                 <td class="pl-8 p-4"data-label="Je suis"><?php echo $element["type"]; ?></td>
                                 <td class="pl-8 p-4"data-label="Email"><?php echo $element["email"]; ?></td>
                                 <td class="pl-8 p-4"data-label="Date"><?php echo $element["date_creation"]; ?></td>

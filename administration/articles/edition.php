@@ -38,7 +38,7 @@ if ($formulaire_soumis) {
 <head>
     <?php include_once("../ressources/includes/head.php"); ?>
 
-    <title>Editer A REMPLACER - Administration</title>
+    <title>Editer article - Administration</title>
 </head>
 
 <body>
