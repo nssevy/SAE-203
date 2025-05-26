@@ -12,7 +12,7 @@
             } ?>><a href="./lieux-de-vie.php">LIEUX DE VIE</a></li>
         <li <?php if ($page_active === "equipe-de-redaction") {
                 echo "class='active'";
-            } ?>><a href="./">ÉQUIPE DE RÉDACTION</a></li>
+            } ?>><a href="./equipe-de-redaction.php">ÉQUIPE DE RÉDACTION</a></li>
         <li <?php if ($page_active === "medias") {
                 echo "class='active'";
             } ?>><a href="./sur-les-medias.php">SUR LES MÉDIAS</a></li>
