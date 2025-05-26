@@ -37,9 +37,17 @@ require_once('./ressources/includes/connexion-bdd.php');
     <main class="conteneur-principal conteneur-1280">
         <!-- Vous allez principalement écrire votre code HTML dans cette balise -->
          <h1 class="titre">Équipe de rédaction</h1>
+<<<<<<< HEAD
+         <section class="équipe">
+         <div class="redacteur"> <img class="bulle-photo" href="" alt=""> NOM PRENOM</div>
+        <div class="redacteur"> <img class="bulle-photo" href="" alt=""> NOM PRENOM</div>
+        <div class="redacteur"> <img class="bulle-photo" href="" alt=""> NOM PRENOM</div>
+        </section>
+=======
          <div class="encadré"> Nom
            <div class="bulle-photo"> <?php $imageUrl = "./ressources/images:test.jpg" ?> </div>
         </div>
+>>>>>>> b3b4b9762fc2e27fd0b965b7832ff31e4413ead2
     </main>
     <?php require_once('./ressources/includes/footer.php'); ?>
 </body>

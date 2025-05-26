@@ -1,5 +1,5 @@
 <?php
-$couleur_bulle_classe = "rose";
+$couleur_bulle_classe = "violet";
 $page_active = "index";
 
 require_once('./ressources/includes/connexion-bdd.php');
@@ -28,36 +28,27 @@ $entite = mysqli_fetch_array($resultat_brut);
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/header.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/accueil.css">
+<<<<<<< HEAD
     
     <link rel="stylesheet" href="./ressources/css/accueil.css">
+=======
 
-    <!-- A supprimer -->
-    <style>
-        .no-design {
-            padding: 0.5rem 1rem;
-            background-color: lightgray;
-            border: 1px solid gray;
-            border-radius: 0.25rem;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="./ressources/css/article.css">
+>>>>>>> 11fd64095d4881b5a3dd78ff72a6e99c55c93734
+
+    
 </head>
 
 <body>
     <?php require_once('./ressources/includes/top-navigation.php'); ?>
     <?php
-        // A supprimer si vous n'en avez pas besoin.
-        // Mettre une couleur dédiée pour cette bulle, si vous gardez la bulle
         require_once('./ressources/includes/bulle.php');
     ?>
 
     <!-- Vous allez principalement écrire votre code HTML ci-dessous -->
     <main class="conteneur-principal conteneur-1280">
         <h1 class="titre"><?php echo $entite["titre"]; ?></h1>
-        <div class="no-design">
-            <p>A vous de faire le design de l'article</p>
-            <p>Pour rappel, le contenu d'un article est détaillé dans les consignes.</p>
-        </div>
+    
     </main>
     <?php require_once('./ressources/includes/footer.php'); ?>
 </body>
