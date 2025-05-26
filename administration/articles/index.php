@@ -50,6 +50,7 @@ $URL_creation = "{$racine_URL}/creation.php";
                             <th class="font-bold pl-8 py-5 text-left">Id</th>
                             <th class="font-bold pl-8 py-5 text-left">Titre</th>
                             <th class="font-bold pl-8 py-5 text-left">Chapô</th>
+                            <th class="font-bold pl-8 py-5 text-left">Contenu</th>
                             <th class="font-bold pl-8 py-5 text-left">Date de création</th>
                             <th class="font-bold pl-8 py-5 text-left">Liens</th>
                             <th class="font-bold pl-8 py-5 text-left">Auteur</th>
@@ -78,8 +79,13 @@ $URL_creation = "{$racine_URL}/creation.php";
                                             <?php echo $date_creation->format('d/m/Y H:i:s'); ?>
                                         </time>
                                     </td>
-                                    <td class="pl-8 p-4" data-label="Auteur">
-                                        <?php echo $auteur_article; ?>
+                                     <td class="pl-8 p-4" data-label="Id"><?php echo $element['id']; ?></td>
+                                     <td class="pl-8 p-4" data-label="Titre"><?php echo $element['titre']; ?></td>
+                                     <td class="pl-8 p-4" data-label="chapô"><?php echo $element['chapo']; ?></td>
+                                     <td class="pl-8 p-4" data-label="contenu"><?php echo $element['contenu']; ?></td>
+                                      <td class="pl-8 p-4" data-label="image"><?php echo $element['image']; ?></td>
+                                     <td class="pl-8 p-4" data-label="date_creation"><?php echo $element['date_creation']; ?></td>
+                                     <td class="pl-8 p-4" data-label="Lien"><?php echo $element['lien_yt']; ?></td>
                                     </td>
                                     <td class="pl-8 p-4">
                                         <a href='<?php echo $lien_edition; ?>' class='font-bold text-blue-600 hover:text-blue-900 focus:text-blue-900'>Éditer</a>

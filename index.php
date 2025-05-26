@@ -49,7 +49,7 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
                      -->
                         <a href="article.php?id=<?php echo $article["id"]; ?>" class='article' id="<?php echo $article["id"]; ?>">
                             <div>
-                            <img src="<?php echo $article['image']; ?>" alt="onisep">
+                            <img src="<?php echo $article['image']; ?>" alt="">
                             </div>
                             <section class='textes'>
                                 <h2 class='titre'>
