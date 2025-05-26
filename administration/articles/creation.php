@@ -26,7 +26,7 @@ if ($formulaire_soumis) {
 <head>
     <?php include_once("../ressources/includes/head.php"); ?>
 
-    <title>Creation A-REMPLACER - Administration</title>
+    <title>Creation article - Administration</title>
 </head>
 
 <body>
