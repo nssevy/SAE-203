@@ -38,7 +38,7 @@ require_once('./ressources/includes/connexion-bdd.php');
         <!-- Vous allez principalement écrire votre code HTML dans cette balise -->
          <h1 class="titre">Équipe de rédaction</h1>
         <div class="bulle-photo"> <?php $imageUrl = "./ressources/images:test.jpg" ?>
-        <div class="encadré"> Nom <div/>
+        <div class="encadré"> titre<div/>
         </div>
     </main>
     <?php require_once('./ressources/includes/footer.php'); ?>
