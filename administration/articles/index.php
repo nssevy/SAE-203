@@ -20,8 +20,6 @@ $page_courante = "articles";
 $racine_URL = $_SERVER['REQUEST_URI'];
 
 $URL_creation = "{$racine_URL}/creation.php";
-$requete_brute = "SELECT * FROM article";
-$resultat_brut = mysqli_query($mysqli_link, $requete_brute);
 ?>
 
 <!DOCTYPE html>
