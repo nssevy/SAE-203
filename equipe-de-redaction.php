@@ -28,6 +28,7 @@ require_once('./ressources/includes/connexion-bdd.php');
 
 <body>
     <?php require_once('./ressources/includes/top-navigation.php'); ?>
+    <?php require_once('./ressources/includes/bulle.php'); ?> 
     <?php
     // facultatif
     // require_once('./ressources/includes/bulle.php');
