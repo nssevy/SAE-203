@@ -23,8 +23,8 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/header.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/accueil.css">
-
     <link rel="stylesheet" href="./ressources/css/accueil.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body>
@@ -48,7 +48,7 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
                      -->
                         <a href="article.php?id=<?php echo $article["id"]; ?>" class='article' id="<?php echo $article["id"]; ?>">
                             <div>
-                                <img src='ressources/images/image-article.png' alt=''>
+                            <img src="<?php echo $article['image']; ?>" alt="onisep">
                             </div>
                             <section class='textes'>
                                 <h2 class='titre'>
@@ -65,6 +65,7 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
                         </a>
                 <?php } ?>
             </section>
+            
             <a class="jpo-banniere" title="Ouverture dans un nouvel onglet" target="_blank" href="https://www.cyu.fr/salons-journee-portes-ouvertes">
                 <img src="ressources/images/logo-cyu-blanc.png" width="200" class="logo" alt="">
 
