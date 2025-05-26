@@ -50,8 +50,11 @@ if ($formulaire_soumis) {
                             <textarea type="text" name="chapo" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus-within:border-indigo-500 focus-within:ring-indigo-500" id="chapo"></textarea>
                         </div>
                         <div class="col-span-12">
-                            <label for="liens" class="block text-lg font-medium text-gray-700">Liens</label>
-                            <textarea type="text" name="liens" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus-within:border-indigo-500 focus-within:ring-indigo-500" id="liens"></textarea>
+                            <label for="lien" class="block text-lg font-medium text-gray-700">Lien</label>
+                            <textarea type="text" name="lien" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus-within:border-indigo-500 focus-within:ring-indigo-500" id="lien"></textarea>
+                        <p class="text-sm text-gray-500">
+                                Ajouter l'URL 
+                        </p>
                         </div>
                         <div class="col-span-12">
                                 <label for="auteur_id" class="block text-lg font-medium text-gray-700">Auteur</label>
