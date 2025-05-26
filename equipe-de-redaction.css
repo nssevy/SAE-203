@@ -1,6 +1,9 @@
 .bulle-icone.bleu {
-    background-color: #2896be;
+    background-color: hsl(196, 65%, 45%);
 }
 .bulle-icone-bordure.bleu {
     background-color: #1979b9;
+}
+.encadré {
+    border: 8rem hsl(196, 65%, 45%);
 }
