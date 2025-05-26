@@ -10,7 +10,7 @@ $requete_brute = " SELECT
         ar.lien_yt AS lien_yt_article,
         ar.date_creation AS date_creation_article,
         ar.auteur_id AS article_auteur_id,
-        CONCAT(auteur.nom, " ", auteur.prenom) AS auteur
+        CONCAT(auteur.nom, "", auteur.prenom) AS auteur
     FROM article AS ar
     LEFT JOIN auteur
     ON ar.auteur_id = auteur.id;";
