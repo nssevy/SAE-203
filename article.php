@@ -51,7 +51,16 @@ $entite = $resultat->fetch_assoc();
         <?php else: ?>
             <h1 class="titre">Article non trouvé</h1>
         <?php endif; ?>
-    
+    <?php if ($entite): ?>
+            <h2 class="chapo"><?php echo htmlspecialchars($entite["chapo"]); ?></h2>
+        <?php else: ?>
+            <h2 class="chapo">Article non trouvé</h2>
+        <?php endif; ?>
+        <?php if ($entite): ?>
+            <p class="contenu"><?php echo htmlspecialchars($entite["contenu"]); ?></p>
+        <?php else: ?>
+            <p class="contenu">Article non trouvé</p>
+        <?php endif; ?>
     </main>
     <?php require_once('./ressources/includes/footer.php'); ?>
 </body>
