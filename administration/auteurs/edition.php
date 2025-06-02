@@ -17,13 +17,18 @@ if ($formulaire_soumis) {
     $id = $_POST["id"];
     $nom = htmlentities($_POST["nom"]);
     $prenom = htmlentities($_POST["prenom"]);
+    $lien_avatar = htmlentities($_POST["lien_avatar"]);
+    $lien_twitter = htmlentities($_POST["lien_twitter"]);
+
+
 
     $requete_brute = "
         UPDATE A-REMPLACER
         SET
             nom = '$nom',
             prenom = '$prenom',
-            A-COMPLETER
+            lien_avatar='$lien_avatar',
+            lien_twitter='$lien_twitter',
         WHERE id = '$id'
     ";
 
@@ -50,9 +55,7 @@ if ($formulaire_soumis) {
     <?php include_once '../ressources/includes/menu-principal.php'; ?>
     <header style="view-transition-name: auteur-<?php echo $id; ?>"  class="bg-white shadow">
         <div class="mx-auto max-w-7xl py-3 px-4">
-            <p class="text-3xl font-bold text-gray-900">Editer
-                "<?php echo $entite['nom']; ?> <?php echo $entite['prenom']; ?>"
-            </p>
+            <p class="text-3xl font-bold text-gray-900">Editer</p>
         </div>
     </header>
     <main>

@@ -3,28 +3,36 @@ require_once('../../ressources/includes/connexion-bdd.php');
 
 $page_courante = "articles";
 
-// Chargement de la liste des auteurs
-$requete_auteurs = "SELECT id, prenom, nom FROM auteur";
-$resultat_auteurs = mysqli_query($mysqli_link, $requete_auteurs);
-$auteurs = mysqli_fetch_all($resultat_auteurs, MYSQLI_ASSOC);
-
 $formulaire_soumis = !empty($_POST);
 
 if ($formulaire_soumis) {
-    // On prépare notre requête pour créer une nouvelle entité
-    $requete_brute = 'INSERT INTO A-REMPLACER(...) VALUES (...)';
+    if (
+        isset(
+            $_POST["titre"],
+            $_POST["chapo"],
+            $_POST["lien_avatar"],
+            $_POST["lien_twitter"]
+        )
+    ) {
+        $nom = htmlentities($_POST["nom"]);
+        $prenom = htmlentities($_POST["prenom"]);
+        $lien_avatar = htmlentities($_POST["lien_avatar"]);
+        $lien_twitter = htmlentities($_POST["lien_twitter"]);
 
-    // On crée une nouvelle entrée
-    $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
+        $requete_brute = "
+            INSERT INTO article(titre, chapo, contenu, date_creation, lien, auteur)
+            VALUES ('$titre', '$chapo', '$contenu', '$date_creation, $lien_yt, $id')
+        ";
+        $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
 
-    if ($resultat_brut) {
-        // Tout s'est bien passé
-    } else {
-        // Il y a eu un problème
+        if ($resultat_brut === true) {
+            // Tout s'est bien passé
+        } else {
+            // Il y a eu un problème
+        }
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
