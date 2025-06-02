@@ -23,7 +23,7 @@ if ($formulaire_soumis) {
 
 
     $requete_brute = "
-        UPDATE A-REMPLACER
+        UPDATE
         SET
             nom = '$nom',
             prenom = '$prenom',

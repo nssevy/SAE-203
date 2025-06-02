@@ -18,13 +18,17 @@ if ($id_present_url) {
 if ($formulaire_soumis) {
     $id = $_POST["id"];
     $titre = htmlentities($_POST["titre"]);
+    $chapo = htmlentities($_POST["chapo"]);
+    $contenu = htmlentities($_POST["contenu"]);
     // On crée notre requête pour éditer une entité
-    $requete_brute = "
-        UPDATE A-REMPLACER
+   $requete_brute = "
+        UPDATE 
         SET
             titre = '$titre',
-            chapo = 'A-REMPLACER',
-            contenu = 'A-REMPLACER'
+            chapo = '$chapo',
+            contenu='$contenu',
+            date_creation='$date_creation',
+            auteur= '$auteur',
         WHERE id = '$id'
     ";
     // On met à jour l'élément
