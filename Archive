@@ -96,3 +96,7 @@ $URL_creation = "{$racine_URL}/creation.php";
 
 
 > git pull --tags origin Main
+
+
+
+$requete = $mysqli_link->prepare("SELECT * FROM article  WHERE id = ?");
