@@ -35,19 +35,17 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
     ?>
 
     <main class="conteneur-principal conteneur-1280">
-        <!-- Vous allez principalement écrire votre code HTML dans cette balise -->
-         <h1 class="titre">Équipe de rédaction</h1>
-          <?php while ($auteur = mysqli_fetch_array($resultat_brut)) { ?>
-                        <a href="auteur.php?id=<?php echo $auteur["id"]; ?>" class='redacteur'>
-                            <figure>
-                                <img src="<?php echo $auteur["lien_avatar"];?>" alt="bulle-photo">
-                            </figure>
-                            <section class='textes'>
-                                <h2 class='titre_auteur'><?php echo $auteur["nom"] . "&nbsp;" . $auteur["prenom"]; ?></h2>
-                            </section>
-                        </a>
-                <?php } ?>
-    </main>
+    <h1 class="titre">Équipe de rédaction</h1>
+
+    <div class="conteneur-redacteurs">
+        <?php while ($auteur = mysqli_fetch_array($resultat_brut)) { ?>
+            <div class="redacteur">
+                <img class="bulle-photo" src="<?php echo $auteur["lien_avatar"]; ?>" alt="Photo de <?php echo $auteur["prenom"]; ?>">
+                <h2 class="titre_auteur"><?php echo $auteur["prenom"] . " " . $auteur["nom"]; ?></h2>
+            </div>
+        <?php } ?>
+    </div>
+</main>
     <?php require_once('./ressources/includes/footer.php'); ?>
 </body>
 
