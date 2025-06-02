@@ -9,11 +9,19 @@ $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 if ($id <= 0) {
     die("ID d'article invalide.");
 }
-$requete = $mysqli_link->prepare("SELECT * FROM article WHERE id = ?");
+
+$requete = $mysqli_link->prepare("
+    SELECT *
+    FROM article
+    JOIN auteur ON article.auteur_id = auteur.id
+    WHERE article.id = ?
+");
+
 $requete->bind_param("i", $id);
 $requete->execute();
 $resultat = $requete->get_result();
 $entite = $resultat->fetch_assoc();
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -35,7 +43,9 @@ $entite = $resultat->fetch_assoc();
 
     <link rel="stylesheet" href="./ressources/css/article.css">
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
 </head>
 
 <body>
@@ -44,22 +54,62 @@ $entite = $resultat->fetch_assoc();
         require_once('./ressources/includes/bulle.php');
     ?>
 
-    <!-- Vous allez principalement écrire votre code HTML ci-dessous -->
     <main class="conteneur-principal conteneur-1280">
-         <?php if ($entite): ?>
-            <h1 class="titre"><?php echo htmlspecialchars($entite["titre"]); ?></h1>
-        <?php else: ?>
-            <h1 class="titre">Article non trouvé</h1>
-        <?php endif; ?>
-    <?php if ($entite): ?>
-            <h2 class="chapo"><?php echo htmlspecialchars($entite["chapo"]); ?></h2>
-        <?php else: ?>
-            <h2 class="chapo">Article non trouvé</h2>
-        <?php endif; ?>
+        <header class="flex flex-col pt-20 pb-50 place-self-center items-center gap-20 w-full">
+            <?php if ($entite): ?>
+                <h1 class="text-8xl"><?php echo htmlspecialchars($entite["titre"]); ?></h1>
+            <?php else: ?>
+                <h1 class="titre">Article non trouvé</h1>
+            <?php endif; ?>
+            <ul class="grid grid-cols-3 w-full gap-10">
+                <!-- la zone identité de l'auteur -->
+                <li class="">
+                    <p class="uppercase text-gray-400 font-semibold text-xl text-center">nom</p>
+                    <?php if ($entite): ?>
+                    <p class="uppercase font-semibold text-xl text-center"><?php echo htmlspecialchars($entite["nom"]); ?></p>
+                    <?php else: ?>
+                        <p class="contenu">Contenu non trouvé</p>
+                    <?php endif; ?>
+                </li>
+                <li class="">
+                    <p class="uppercase text-gray-400 font-semibold text-xl text-center">prénom</p>
+                    <?php if ($entite): ?>
+                    <p class="uppercase font-semibold text-xl text-center"><?php echo htmlspecialchars($entite["prenom"]); ?></p>
+                    <?php else: ?>
+                        <p class="contenu">Contenu non trouvé</p>
+                    <?php endif; ?>
+                </li>
+                <li class="">
+                    <p class="uppercase text-gray-400 font-semibold text-xl text-center">date</p>
+                    <?php if ($entite): ?>
+                    <p class="uppercase font-semibold text-xl text-center"><?php echo htmlspecialchars($entite["date_creation"]); ?></p>
+                    <?php else: ?>
+                        <p class="contenu">Contenu non trouvé</p>
+                    <?php endif; ?>
+                </li>
+            </ul>
+        </header>
+
+        <section class="flex flex-col gap-15">
+            <?php if ($entite): ?>
+                <h2 class="text-4xl"><?php echo htmlspecialchars($entite["chapo"]); ?></h2>
+            <?php else: ?>
+                <h2 class="chapo">Chapo non trouvé</h2>
+            <?php endif; ?>
+
+            <article class="px-30 text-3xl ">
+                <?php if ($entite): ?>
+                    <p class="contenu"><?php echo htmlspecialchars($entite["contenu"]); ?></p>
+                <?php else: ?>
+                    <p class="contenu">Contenu non trouvé</p>
+                <?php endif; ?>
+            </article>
+        </section>
+
         <?php if ($entite): ?>
-            <p class="contenu"><?php echo htmlspecialchars($entite["contenu"]); ?></p>
+            <img src="<?php echo htmlspecialchars($entite["image"]); ?>" alt="">
         <?php else: ?>
-            <p class="contenu">Article non trouvé</p>
+            <p class="contenu">Image non trouvé</p>
         <?php endif; ?>
     </main>
     <?php require_once('./ressources/includes/footer.php'); ?>

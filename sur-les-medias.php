@@ -1,4 +1,4 @@
-<?php
+            <?php
 require_once('./ressources/includes/connexion-bdd.php');
 
 $couleur_bulle_classe = "rouge";
@@ -34,7 +34,7 @@ $page_active = "medias";
                 <p class="text-lg">Les actualités et les évènements important du BUT et de l'IUT CY Paris Université dans les médias</p>
             </div>
         </section>
-        <hr class="border-t-1 border-gray-200 left-1/2 -translate-x-1/2 absolute w-[2000px]"/>
+        <hr class="border-t-1 border-gray-200 left-1/2 -translate-x-1/2 absolute w-full"/>
         <ul class="grid grid-cols-3 gap-5 pt-20">
             <li class="w-full rounded-xl">
                 <iframe class="w-full" height="388" src="https://www.youtube.com/embed/oiEbQF7qfBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
