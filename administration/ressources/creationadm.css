@@ -1,0 +1,23 @@
+/* Bannières d'erreurs */
+.alert-error {
+    background-color: #fee2e2; /* rouge clair */
+    color: #b91c1c;           /* rouge foncé */
+    border: 1px solid #fca5a5;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgb(185 28 28 / 0.2);
+}
+
+/* Bannières de succès */
+.alert-success {
+    background-color: #dcfce7; /* vert clair */
+    color: #15803d;           /* vert foncé */
+    border: 1px solid #86efac;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgb(21 128 61 / 0.2);
+}

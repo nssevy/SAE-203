@@ -3,7 +3,7 @@ require_once('../../ressources/includes/connexion-bdd.php');
 
 $page_courante = "articles";
 
-// Chargement de la liste des auteurs
+// Charger la liste des auteurs
 $requete_auteurs = "SELECT id, prenom, nom FROM auteur";
 $resultat_auteurs = mysqli_query($mysqli_link, $requete_auteurs);
 $auteurs = mysqli_fetch_all($resultat_auteurs, MYSQLI_ASSOC);
@@ -30,7 +30,7 @@ if ($formulaire_soumis) {
 
 <head>
     <?php include_once("../ressources/includes/head.php"); ?>
-
+    <link rel="stylesheet" href="./administration/ressources/creationadm.css">
     <title>Creation article - Administration</title>
 </head>
 
