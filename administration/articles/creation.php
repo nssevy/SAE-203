@@ -3,6 +3,11 @@ require_once('../../ressources/includes/connexion-bdd.php');
 
 $page_courante = "articles";
 
+// Charger la liste des auteurs
+$requete_auteurs = "SELECT id, prenom, nom FROM auteur";
+$resultat_auteurs = mysqli_query($mysqli_link, $requete_auteurs);
+$auteurs = mysqli_fetch_all($resultat_auteurs, MYSQLI_ASSOC);
+
 $formulaire_soumis = !empty($_POST);
 
 if ($formulaire_soumis) {
@@ -60,7 +65,7 @@ if ($formulaire_soumis) {
                                 <label for="auteur_id" class="block text-lg font-medium text-gray-700">Auteur</label>
                                 <select name="auteur_id" id="auteur_id" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                                 <option value="">Auteur inconnu</option>
-                                <?php foreach ($auteur as $auteur) { ?>
+                                <?php foreach ($auteurs as $auteur) { ?>
                                 <option value="<?php echo $auteur['id']; ?>"><?php echo $auteur['prenom'] . ' ' . $auteur['nom']; ?></option>
                                 <?php } ?>
                                 </select>
