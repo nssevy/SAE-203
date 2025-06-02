@@ -4,8 +4,8 @@ $page_active = "equipe-de-redaction";
 
 require_once('./ressources/includes/connexion-bdd.php');
 
-// Vos requêtes SQL
-
+$requete_brute = "SELECT * FROM auteur";
+$resultat_brut = mysqli_query($mysqli_link, $requete_brute);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -37,11 +37,16 @@ require_once('./ressources/includes/connexion-bdd.php');
     <main class="conteneur-principal conteneur-1280">
         <!-- Vous allez principalement écrire votre code HTML dans cette balise -->
          <h1 class="titre">Équipe de rédaction</h1>
-         <section class="équipe">
-         <div class="redacteur"> <img class="bulle-photo" href="" alt=""> NOM PRENOM</div>
-        <div class="redacteur"> <img class="bulle-photo" href="" alt=""> NOM PRENOM</div>
-        <div class="redacteur"> <img class="bulle-photo" href="" alt=""> NOM PRENOM</div>
-        </section>
+          <?php while ($auteur = mysqli_fetch_array($resultat_brut)) { ?>
+                        <a href="auteur.php?id=<?php echo $auteur["id"]; ?>" class='redacteur'>
+                            <figure>
+                                <img src="<?php echo $auteur["lien_avatar"];?>" alt="bulle-photo">
+                            </figure>
+                            <section class='textes'>
+                                <h2 class='titre_auteur'><?php echo $auteur["nom"] . "&nbsp;" . $auteur["prenom"]; ?></h2>
+                            </section>
+                        </a>
+                <?php } ?>
     </main>
     <?php require_once('./ressources/includes/footer.php'); ?>
 </body>
