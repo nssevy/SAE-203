@@ -31,6 +31,13 @@ $URL_creation = "{$racine_URL}/creation.php";
     </header>
     <main>
         <div class="mx-auto max-w-7xl py-6 px-4">
+            <?php if (!empty($message_success)) : ?>
+    <div class="alert-success"><?php echo $message_success; ?></div>
+<?php endif; ?>
+
+<?php if (!empty($message_error)) : ?>
+    <div class="alert-error"><?php echo $message_error; ?></div>
+<?php endif; ?>
             <div class="py-6">
                 <table class="w-full bg-white rounded-lg overflow-hidden border-collapse shadow">
                     <thead class="bg-gray-100">
@@ -67,6 +74,7 @@ $URL_creation = "{$racine_URL}/creation.php";
                                 <td class="pl-8 p-4" data-label="Twitter"><?php echo $element['lien_twitter']; ?></td>
                                 <td class="pl-8 p-4" data-label="">
                                     <a href="<?php echo $lien_edition; ?>" class='font-bold text-blue-600 hover:text-blue-900 focus:text-blue-900'>Éditer</a>
+                                    <a href='suppression.php?id=<?php echo $element["id"]; ?>' onclick="return confirm('Supprimer cet auteur ?');" class='font-bold text-red-600 hover:text-red-900 ml-4'>Supprimer</a>
                                 </td>
                             </tr>
                         <?php } ?>

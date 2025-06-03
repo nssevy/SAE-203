@@ -34,10 +34,11 @@ if ($formulaire_soumis) {
 
     $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
 
-    if ($resultat_brut === true) {
-        // Tout s'est bien passé
+    if ($result) {
+        header("Location:../articles/index.php");
+        exit;
     } else {
-        // Il y a eu un problème
+        echo "Erreur MySQL : ".mysqli_error($mysqli_link);
     }
 }
 ?>
