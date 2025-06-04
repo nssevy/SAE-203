@@ -58,16 +58,16 @@ $URL_creation = $racine_URL . "/creation.php";
 <?php if (!empty($message_error)) : ?>
     <div class="alert-error"><?php echo $message_error; ?></div>
 <?php endif; ?>
-        <table class="w-full table-fixed bg-white rounded-lg overflow-hidden shadow border-collapse">
+        <table class="w-full table-fixed bg-white rounded-lg overflow-hidden border-collapse shadow">
             <thead class="bg-gray-100">
                 <tr>
-                    <th class="w-16 px-4 py-3 text-left">ID</th>
-                    <th class="w-48 px-4 py-3 text-left">Titre</th>
-                    <th class="w-64 px-4 py-3 text-left truncate">Chapô</th>
-                    <th class="w-72 px-4 py-3 text-left max-w-xs truncate hidden md:table-cell">Contenu</th>
-                    <th class="w-40 px-4 py-3 text-left">Date</th>
-                    <th class="w-64 px-4 py-3 text-left truncate hidden lg:table-cell">Lien</th>
-                    <th class="w-40 px-4 py-3 text-left">Auteur</th>
+                    <th class="pl-8 py-5 text-left">ID</th>
+                    <th class="pl-8 py-5 text-left">Titre</th>
+                    <th class="pl-8 py-5 text-left">Chapô</th>
+                    <th class="pl-8 py-5 text-left">Contenu</th>
+                    <th class="pl-8 py-5 text-left">Date</th>
+                    <th class="pl-8 py-5 text-left">Lien</th>
+                    <th class="pl-8 py-5 text-left">Auteur</th>
                     <th></th>
                 </tr>
             </thead>
@@ -79,8 +79,8 @@ $URL_creation = $racine_URL . "/creation.php";
                 <tr>
                     <td class="pl-8 p-4"><?php echo $element["id"]; ?></td>
                     <td class="pl-8 p-4"><?php echo $element["titre"]; ?></td>
-                    <td class="pl-8 p-4 truncate"><?php echo $element["chapo"]; ?></td>
-                    <td class="pl-8 p-4 truncate"><?php echo $element["contenu"]; ?></td>
+                    <td class="pl-8 p-4 truncate max-w-[200px]"><?php echo $element["chapo"]; ?></td>
+                    <td class="pl-8 p-4 truncate max-w-[200px]"><?php echo $element["contenu"]; ?></td>
                     <td class="pl-8 p-4"><?php echo $date->format("d/m/Y H:i"); ?></td>
                     <td class="pl-8 p-4"><?php echo $element["lien_yt"]; ?></td>
                     <td class="pl-8 p-4"><?php echo $element["auteur"] ?: "/"; ?></td>
@@ -92,7 +92,7 @@ $URL_creation = $racine_URL . "/creation.php";
             <?php } ?>
             </tbody>
         </table>
-   </div>
+    </div>
 </main>
 <?php require_once("../ressources/includes/global-footer.php"); ?>
 </body>
