@@ -1,5 +1,8 @@
 <?php
 require_once "../../ressources/includes/connexion-bdd.php";
+session_start();
+$message_success = "";
+$message_error = "";
 
 $page_courante = "auteurs";
 
@@ -24,12 +27,15 @@ if ($formulaire_soumis) {
             VALUES ('$nom', '$prenom', '$lien_avatar', '$lien_twitter')
         ";
         $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
-
+ 
+   
         if ($resultat_brut === true) {
-            // Tout s'est bien passé
-        } else {
-            // Il y a eu un problème
-        }
+        $_SESSION['message_success'] = "Auteur créé avec succès.";
+         header("Location: ../auteurs/index.php"); 
+    exit; 
+      } else {
+    $message_error = "Erreur lors de la création : " . mysqli_error($mysqli_link);
+}
     }
 }
 ?>
@@ -51,8 +57,14 @@ if ($formulaire_soumis) {
         </div>
     </header>
 
-    <main>
-        <div class="mx-auto max-w-7xl py-6 px-4">
+    <main> <div class="mx-auto max-w-7xl py-6 px-4">
+         <?php if (!empty($message_success)) : ?>
+    <div class="alert-success"><?php echo $message_success; ?></div>
+<?php endif; ?>
+
+<?php if (!empty($message_error)) : ?>
+    <div class="alert-error"><?php echo $message_error; ?></div>
+<?php endif; ?>
             <div class="py-6">
                 <form method="POST" action="" class="rounded-lg bg-white p-4 shadow border-gray-300 border-1">
                     <section class="grid gap-6">

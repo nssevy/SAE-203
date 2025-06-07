@@ -85,8 +85,8 @@ $URL_creation = $racine_URL . "/creation.php";
                     <td class="pl-8 p-4"><?php echo $element["lien_yt"]; ?></td>
                     <td class="pl-8 p-4"><?php echo $element["auteur"] ?: "/"; ?></td>
                     <td class="pl-8 p-4">
-                        <a href="<?php echo $lien_edition; ?>" class="text-blue-600 hover:underline">Éditer</a>
-                        <a href='suppression.php?id=<?php echo $element["id"]; ?>' onclick="return confirm('Supprimer cet article ?');" class='font-bold text-red-600 hover:text-red-900 ml-4'>Supprimer</a>
+                        <a href="<?php echo $lien_edition; ?>" class="font-bold text-blue-600 hover:text-blue-900 focus:text-blue-900">Éditer</a>
+                        <a href='suppression.php?id=<?php echo $element["id"]; ?>'onclick="return confirm('Supprimer cet article ?');" class='font-bold text-red-600 hover:text-red-900'>Supprimer</a>
                     </td>
                 </tr>
             <?php } ?>

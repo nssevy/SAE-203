@@ -1,11 +1,11 @@
 <?php
-require_once '../../ressources/includes/connexion-bdd.php';
-$page_courante = 'auteurs';
+require_once ('../../ressources/includes/connexion-bdd.php');
+$page_courante = "auteurs";
 
+$entite = null;
 $formulaire_soumis = !empty($_POST);
 $id_present_url = array_key_exists('id', $_GET);
 
-$entite = null;
 if ($id_present_url) {
     $id = $_GET["id"];
     $requete_brute = "SELECT * FROM auteur WHERE id = $id";
@@ -22,7 +22,7 @@ if ($formulaire_soumis) {
 
 
 
-    $requete_brute = "
+    $requete_update = "
         UPDATE
         SET
             nom = '$nom',
@@ -32,14 +32,15 @@ if ($formulaire_soumis) {
         WHERE id = '$id'
     ";
 
-    $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
+    $resultat_brut = mysqli_query($mysqli_link, $requete_update);
 
-    if ($result) {
-        header("Location:../articles/index.php");
+   if ($resultat_brut) {
+        $_SESSION['message_success'] = "L'auteur a été mis à jour.";
+        header("Location:../auteurs/index.php");
         exit;
     } else {
-        echo "Erreur MySQL : ".mysqli_error($mysqli_link);
-    }
+        echo "Erreur MySQL : " . mysqli_error($mysqli_link);
+}
 }
 ?>
 

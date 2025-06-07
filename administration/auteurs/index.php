@@ -1,5 +1,9 @@
 <?php
 require_once '../../ressources/includes/connexion-bdd.php';
+session_start();
+$message_success = $_SESSION['message_success'] ?? '';
+$message_error = $_SESSION['message_error'] ?? '';
+unset($_SESSION['message_success'], $_SESSION['message_error']);
 
 $requete_brute = "SELECT * FROM auteur";
 $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
