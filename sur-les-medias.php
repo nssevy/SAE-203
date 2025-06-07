@@ -62,15 +62,11 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
         <?php } ?>
     </ul>
 
-        
     </main>
-    <?php require_once('./ressources/includes/footer.php'); ?>
+    
+    <footer>
+        <?php require_once('./ressources/includes/footer.php'); ?>  
+    </footer>
 </body>
 
 </html>
-
-<ul>
-    <a href=""></a>
-    <a href="http://" target="_blank" rel="noopener noreferrer"></a>
-    <iframe src="" frameborder="0"></iframe>
-</ul>

@@ -124,7 +124,7 @@ $article = mysqli_fetch_assoc($resultat);
                                     </time>
                                 </p>
                             </div>
-                            <button id="button" class="px-5 py-3 border border-gray-300 rounded-full">Lire</button>
+                            <button id="button" class="px-5 py-3 border border-gray-300 text-gray-300 rounded-full">Lire</button>
                         </div>
                         
                     </div>
