@@ -22,17 +22,13 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/header.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/accueil.css">
-    <link rel="stylesheet" href="./ressources/css/equipe-de-redaction.css">
+    <link rel="stylesheet" href="./equipe-de-redaction.css">
 
 </head>
 
 <body>
     <?php require_once('./ressources/includes/top-navigation.php'); ?>
     <?php require_once('./ressources/includes/bulle.php'); ?> 
-    <?php
-    // facultatif
-    // require_once('./ressources/includes/bulle.php');
-    ?>
 
     <main class="conteneur-principal conteneur-1280">
     <h1 class="titre">Équipe de rédaction</h1>
