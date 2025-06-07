@@ -100,3 +100,44 @@ $URL_creation = "{$racine_URL}/creation.php";
 
 
 $requete = $mysqli_link->prepare("SELECT * FROM article  WHERE id = ?");
+
+<a class="jpo-banniere" title="Ouverture dans un nouvel onglet" target="_blank" href="https://www.cyu.fr/salons-journee-portes-ouvertes">
+                <img src="ressources/images/logo-cyu-blanc.png" width="200" class="logo" alt="">
+
+                <section class="textes">
+                    <p class="txt-petit">Journée portes ouvertes</p>
+                    <p class="txt-grand">
+                        27/01/<?php echo date('Y') ?>,<br />
+                        de 10h à 17h
+                    </p>
+                    <p class="en-savoir-plus">EN SAVOIR PLUS</p>
+                </section>
+            </a>
+
+
+
+ARHIVE CARD Accueil
+
+<a href="article.php?id=<?php echo $article["id"]; ?>" class='grid grid-cols-5 w-full gap-10 py-10 h-100' id="<?php echo $article["id"]; ?>">
+                            <p class="date">Publié le <time datetime="<?php echo $date_creation->format('d/m/Y H:i:s'); ?>">
+                                    <?php echo $date_creation->format('d/m/Y à H:i:s'); ?>
+                                </time>
+                            </p>
+                            <section class="flex flex-col col-span-2 place-content-between">
+                                <div class='textes flex flex-col gap-5'>
+                                    <h2 class='text-3xl'>
+                                        <?php echo $article["titre"]; ?>
+                                    </h2>
+                                    <p class='description text-base text-gray-500'>
+                                        <?php echo $article["chapo"]; ?>
+                                    </p>
+                                </div>
+                                <div class="flex w-full place-content-end">
+                                    <button id="button" class="px-5 py-3 border rounded-full">Lire</button>
+                                </div>
+                            </section>
+
+                            <div class="col-span-2">
+                            <img class="w-full h-full object-cover" src="<?php echo $article['image']; ?>" alt="">
+                            </div>
+                        </a>

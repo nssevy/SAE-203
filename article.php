@@ -99,7 +99,7 @@ $entite = $resultat->fetch_assoc();
 
             <article class="px-30 text-3xl ">
                 <?php if ($entite): ?>
-                    <p class="contenu"><?php echo htmlspecialchars($entite["contenu"]); ?></p>
+                    <p class="contenu"><?php echo nl2br (htmlspecialchars($entite["contenu"])); ?></p>
                 <?php else: ?>
                     <p class="contenu">Contenu non trouvé</p>
                 <?php endif; ?>
@@ -111,6 +111,8 @@ $entite = $resultat->fetch_assoc();
         <?php else: ?>
             <p class="contenu">Image non trouvé</p>
         <?php endif; ?>
+
+        
     </main>
     <?php require_once('./ressources/includes/footer.php'); ?>
 </body>

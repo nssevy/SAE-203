@@ -35,6 +35,12 @@
             <li>
                 <a href="./administration/auteurs" class="lien-admin">Accéder à l'administration</a>
             </li>
+            <li aria-hidden="true">
+                |
+            </li>
+            <li>
+                <a href="#top" class="lien-admin">Remonter</a>
+            </li>
         </ul>
 
         <p class="txt-credits">SAE 203 • BUT MMI - CY Paris Université - Site de Sarcelles</p>
