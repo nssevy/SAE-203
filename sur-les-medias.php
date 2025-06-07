@@ -1,8 +1,11 @@
-            <?php
-require_once('./ressources/includes/connexion-bdd.php');
-
+<?php
 $couleur_bulle_classe = "rouge";
 $page_active = "medias";
+
+require_once('./ressources/includes/connexion-bdd.php');
+
+$requete_brute = "SELECT * FROM sur_les_medias";
+$resultat_brut = mysqli_query($mysqli_link, $requete_brute);
 
 ?>
 <!DOCTYPE html>
@@ -36,37 +39,38 @@ $page_active = "medias";
         </section>
         <hr class="border-t-1 border-gray-200 left-1/2 -translate-x-1/2 absolute w-full"/>
         <ul class="grid grid-cols-3 gap-5 pt-20">
-            <li class="w-full rounded-xl">
-                <iframe class="w-full" height="388" src="https://www.youtube.com/embed/oiEbQF7qfBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <div class="flex flex-col justify-center py-5 gap-2">
-                    <p class="uppercase text-center font-semibold text-gray-400">video</p>
-                    <h2 class="text-2xl text-center font-semibold">La nouvelle réforme</h2>
-                </div>
+
+        <?php while ($video = mysqli_fetch_array($resultat_brut)) { ?>
+            <li id="<?php echo $video["id"]; ?>" class="flex flex-col">
+                <a href="<?php echo htmlspecialchars ($video['link']); ?>" target="_blank">
+                    <iframe class="w-full rounded-lg" height="388"
+                        src="https://www.youtube.com/embed/<?php echo htmlspecialchars($video['youtube_id']); ?>"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+
+                    <div class="flex flex-col justify-center py-5 gap-2">
+                        <p class="uppercase text-center font-semibold text-gray-400">Vidéo</p>
+                        <h2 class="text-2xl text-center font-semibold">
+                            <?php echo htmlspecialchars($video["titre"]); ?>
+                        </h2>
+                    </div>
+                </a>
             </li>
-            <li class="w-full">
-                <iframe class="w-full" height="388" src="https://www.youtube.com/embed/SyjF4h2Zb7Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <div class="flex flex-col justify-center py-5 gap-2">
-                    <p class="uppercase text-center font-semibold text-gray-400">video</p>
-                    <h2 class="text-2xl text-center font-semibold">Pourquoi étudier à l'IUT CYU ?</h2>
-                </div>
-            </li>
-            <li class="w-full">
-                <iframe class="w-full" height="388" src="https://www.youtube.com/embed/t72pdxpNjyc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <div class="flex flex-col justify-center py-5 gap-2">
-                    <p class="uppercase text-center font-semibold text-gray-400">video</p>
-                    <h2 class="text-2xl text-center font-semibold">Job interview en anglais au département MMI</h2>
-                </div>
-            </li>
-            <li class="w-full rounded-xl">
-                <iframe class="w-full" height="388" src="https://www.youtube.com/embed/xD4wshE0hEg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <div class="flex flex-col justify-center py-5 gap-2">
-                    <p class="uppercase text-center font-semibold text-gray-400">video</p>
-                    <h2 class="text-2xl text-center font-semibold">L'importance de l'IUT dans les études supérieures</h2>
-                </div>
-            </li>
-        </ul>
+        <?php } ?>
+    </ul>
+
+        
     </main>
     <?php require_once('./ressources/includes/footer.php'); ?>
 </body>
 
 </html>
+
+<ul>
+    <a href=""></a>
+    <a href="http://" target="_blank" rel="noopener noreferrer"></a>
+    <iframe src="" frameborder="0"></iframe>
+</ul>

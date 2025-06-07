@@ -40,7 +40,7 @@ $article = mysqli_fetch_assoc($resultat);
     <!-- Vous allez principalement écrire votre code HTML ci-dessous -->
     <main class="conteneur-principal conteneur-1280">
         <!-- Le header de la page article titre + petite descritipon, (DESCRIPTION A MODIFIER) -->
-        <header class="flex flex-wrap place-content-between pt-20 pb-30">
+        <header class="flex flex-wrap place-content-between py-20">
             <h1 class="text-5xl font-semibold">Articles sur le BUT MMI</h1>
             <div class="w-1/2">
                 <p class="text-lg">Entre les cours, l’université et ses IUT proposent de nombreux lieux de convivialité ou d’idéation. Divers et variés, ils permettent aux étudiants, de toute formation, de découvrir de nouveaux horizons et surtout de rencontrer les étudiants d’autres BUT.</p>
