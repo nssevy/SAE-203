@@ -57,8 +57,9 @@ if ($formulaire_soumis) {
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
     <link rel="stylesheet" href="./ressources/css/header-eleve.css">
 
-
     <link rel="stylesheet" href="./ressources/css/contact.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 </head>
 
 <body>
@@ -82,74 +83,80 @@ if ($formulaire_soumis) {
     <?php require_once('./ressources/includes/bulle.php'); ?>
 
     <main class="conteneur-principal conteneur-1280">
-        <h1 class="titre">Plus d'infos sur la formation ? <br /> Contactez-nous !</h1>
 
-        <section>
-            <p class="paragraphe">
+        <header class="flex place-content-between py-10">
+            <h1 class="text-5xl font-semibold">Plus d'infos sur la formation, Contactez-nous ! </h1>
+            <div class="w-1/2">
+                <p class="paragraphe text-lg">
                 <span class="texte-gras">La formation s'ouvre à tous les bacheliers.</span> Avoir des connaissances en programmation, design ou encore audiovisuel n'est pas obligatoire mais reste un bon atout, car il faut aimer la curiosité dans cette formation pluridisciplinaire. <span class="texte-gras">Il est également possible de faire la formation après une reprise d'études ou une réorientation.</span>
             </p>
+            </div>
+        </header>
+
+        <hr class="border-t-1 border-gray-200 left-1/2 -translate-x-1/2 absolute w-full"/>
+
+        <section class="pt-10">
+            <p class="titre">Nous contacter en ligne</p>
+
+            <form action="" method="POST" class="formulaire-contact">
+                <article class="champ-conteneur">
+                    <label for="prenom" class="label-champ texte-gras">Prénom</label>
+                    <input type="text" class="champ" name="prenom" id="prenom" value="<?php echo $formulaire_a_erreurs ? $_POST["prenom"] : null; ?>">
+                </article>
+
+                <article class="champ-conteneur">
+                    <label for="nom" class="label-champ texte-gras">Nom de famille</label>
+                    <input type="text" class="champ" name="nom" id="nom" value="<?php echo $formulaire_a_erreurs ? $_POST["nom"] : null; ?>">
+                </article>
+
+                <article class="champ-conteneur">
+                    <label for="email" class="label-champ texte-gras">Adresse e-mail</label>
+                    <input type="email" class="champ" name="email" id="email" value="<?php echo $formulaire_a_erreurs ? $_POST["email"] : null; ?>">
+                </article>
+
+                <article class="champ-conteneur">
+                    <label for="message" class="label-champ texte-gras">Message</label>
+                    <textarea name="message" id="message" cols="30" rows="10" class="champ">
+                        <?php echo $formulaire_a_erreurs ? $_POST["message"] : null; ?>
+                    </textarea>
+                </article>
+
+                <article class="champ-conteneur">
+                    <p class="label-champ texte-gras">Je suis</p>
+                    <ul class="liste-choix">
+                        <li class="choix">
+                            <input type="radio" name="je_suis" id="pas_precise" value="pas_precise">
+                            <label for="pas_precise">Je ne souhaite pas le préciser</label>
+                        </li>
+                        <li class="choix">
+                            <input type="radio" name="je_suis" id="etudiant" value="etudiant">
+                            <label for="etudiant">Étudiant / Étudiante</label>
+                        </li>
+                        <li class="choix">
+                            <input type="radio" name="je_suis" id="parent" value="parent">
+                            <label for="parent">Parent</label>
+                        </li>
+                        <li class="choix">
+                            <input type="radio" name="je_suis" id="autre" value="autre">
+                            <label for="autre">Autre</label>
+                        </li>
+                    </ul>
+                </article>
+                <article class="champ-conteneur">
+                    <button type="submit" class="btn-envoi texte-gras">
+                        ENVOYER
+                    </button>
+                </article>
+            </form>
+
+            <p class="titre">Nous contacter par courrier</p>
+            <p class="paragraphe">
+                IUT de Cergy-Pontoise,<br>
+                Département Métiers du Multimédia et de l’Internet (MMI) <br>
+                34 Bis Boulevard Henri Bergson <br>
+                95200 Sarcelles
+            </p>
         </section>
-
-        <p class="titre">Nous contacter en ligne</p>
-
-        <form action="" method="POST" class="formulaire-contact">
-            <article class="champ-conteneur">
-                <label for="prenom" class="label-champ texte-gras">Prénom</label>
-                <input type="text" class="champ" name="prenom" id="prenom" value="<?php echo $formulaire_a_erreurs ? $_POST["prenom"] : null; ?>">
-            </article>
-
-            <article class="champ-conteneur">
-                <label for="nom" class="label-champ texte-gras">Nom de famille</label>
-                <input type="text" class="champ" name="nom" id="nom" value="<?php echo $formulaire_a_erreurs ? $_POST["nom"] : null; ?>">
-            </article>
-
-            <article class="champ-conteneur">
-                <label for="email" class="label-champ texte-gras">Adresse e-mail</label>
-                <input type="email" class="champ" name="email" id="email" value="<?php echo $formulaire_a_erreurs ? $_POST["email"] : null; ?>">
-            </article>
-
-            <article class="champ-conteneur">
-                <label for="message" class="label-champ texte-gras">Message</label>
-                <textarea name="message" id="message" cols="30" rows="10" class="champ">
-                    <?php echo $formulaire_a_erreurs ? $_POST["message"] : null; ?>
-                </textarea>
-            </article>
-
-            <article class="champ-conteneur">
-                <p class="label-champ texte-gras">Je suis</p>
-                <ul class="liste-choix">
-                    <li class="choix">
-                        <input type="radio" name="je_suis" id="pas_precise" value="pas_precise">
-                        <label for="pas_precise">Je ne souhaite pas le préciser</label>
-                    </li>
-                    <li class="choix">
-                        <input type="radio" name="je_suis" id="etudiant" value="etudiant">
-                        <label for="etudiant">Étudiant / Étudiante</label>
-                    </li>
-                    <li class="choix">
-                        <input type="radio" name="je_suis" id="parent" value="parent">
-                        <label for="parent">Parent</label>
-                    </li>
-                    <li class="choix">
-                        <input type="radio" name="je_suis" id="autre" value="autre">
-                        <label for="autre">Autre</label>
-                    </li>
-                </ul>
-            </article>
-            <article class="champ-conteneur">
-                <button type="submit" class="btn-envoi texte-gras">
-                    ENVOYER
-                </button>
-            </article>
-        </form>
-
-        <p class="titre">Nous contacter par courrier</p>
-        <p class="paragraphe">
-            IUT de Cergy-Pontoise,<br>
-            Département Métiers du Multimédia et de l’Internet (MMI) <br>
-            34 Bis Boulevard Henri Bergson <br>
-            95200 Sarcelles
-        </p>
     </main>
     <?php require_once('./ressources/includes/footer.php'); ?>
 </body>

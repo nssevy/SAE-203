@@ -8,6 +8,7 @@
 // Et que tu vas dans l'inspecteur du navigateur tu pourras voir ce que la variable "button" cible
 document.querySelectorAll("#hover-card").forEach((card) => {
     const button = card.querySelector("button");
+    console.log(button);
 
     if (button) {
         // addEventListener ca veut dire ajoute à card (que j'ai défini en haut avec la variable "const button = card etc" tel evénement, là l'éventement est "mouseenter". Donc si la souris entre dans le card, alors on ajoute les classes suivantes au button. Et les classes c'est un background rose, un texte rose foncé et une bordure blanche.

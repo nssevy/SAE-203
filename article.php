@@ -23,6 +23,7 @@ $resultat = $requete->get_result();
 $entite = $resultat->fetch_assoc();
 
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -36,14 +37,11 @@ $entite = $resultat->fetch_assoc();
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/reset.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/fonts.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
-    <link rel="stylesheet" href="./ressources/css/header-eleve.css">
-
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/accueil.css">
-    
+
+    <link rel="stylesheet" href="./ressources/css/header-eleve.css">
     <link rel="stylesheet" href="./ressources/css/accueil.css">
-
     <link rel="stylesheet" href="./ressources/css/article.css">
-
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 
@@ -51,14 +49,11 @@ $entite = $resultat->fetch_assoc();
 
 <body>
     <?php require_once('./ressources/includes/top-navigation.php'); ?>
-    <?php
-        require_once('./ressources/includes/bulle.php');
-    ?>
 
     <main class="conteneur-principal conteneur-1280">
-        <header class="flex flex-col pt-20 pb-50 place-self-center items-center gap-20 w-full">
+        <header class="flex flex-col gap-20 w-full h-screen justify-center">
             <?php if ($entite): ?>
-                <h1 class="text-8xl"><?php echo htmlspecialchars($entite["titre"]); ?></h1>
+                <h1 class="text-8xl/24 uppercase text-center"><?php echo htmlspecialchars($entite["titre"]); ?></h1>
             <?php else: ?>
                 <h1 class="titre">Article non trouvé</h1>
             <?php endif; ?>
@@ -67,7 +62,7 @@ $entite = $resultat->fetch_assoc();
                 <li class="">
                     <p class="uppercase text-gray-400 font-semibold text-xl text-center">nom</p>
                     <?php if ($entite): ?>
-                    <p class="uppercase font-semibold text-xl text-center"><?php echo htmlspecialchars($entite["nom"]); ?></p>
+                    <p class="uppercase font-semibold text-xl text-center -mt-2"><?php echo htmlspecialchars($entite["nom"]); ?></p>
                     <?php else: ?>
                         <p class="contenu">Contenu non trouvé</p>
                     <?php endif; ?>
@@ -75,7 +70,7 @@ $entite = $resultat->fetch_assoc();
                 <li class="">
                     <p class="uppercase text-gray-400 font-semibold text-xl text-center">prénom</p>
                     <?php if ($entite): ?>
-                    <p class="uppercase font-semibold text-xl text-center"><?php echo htmlspecialchars($entite["prenom"]); ?></p>
+                    <p class="uppercase font-semibold text-xl text-center -mt-2"><?php echo htmlspecialchars($entite["prenom"]); ?></p>
                     <?php else: ?>
                         <p class="contenu">Contenu non trouvé</p>
                     <?php endif; ?>
@@ -83,7 +78,7 @@ $entite = $resultat->fetch_assoc();
                 <li class="">
                     <p class="uppercase text-gray-400 font-semibold text-xl text-center">date</p>
                     <?php if ($entite): ?>
-                    <p class="uppercase font-semibold text-xl text-center"><?php echo htmlspecialchars($entite["date_creation"]); ?></p>
+                    <p class="uppercase font-semibold text-xl text-center -mt-2"><?php echo htmlspecialchars($entite["date_creation"]); ?></p>
                     <?php else: ?>
                         <p class="contenu">Contenu non trouvé</p>
                     <?php endif; ?>
@@ -105,14 +100,12 @@ $entite = $resultat->fetch_assoc();
                     <p class="contenu">Contenu non trouvé</p>
                 <?php endif; ?>
             </article>
-        </section>
-
-        <?php if ($entite): ?>
+            <?php if ($entite): ?>
             <img src="<?php echo htmlspecialchars($entite["image"]); ?>" alt="">
         <?php else: ?>
             <p class="contenu">Image non trouvé</p>
         <?php endif; ?>
-
+        </section>
         
     </main>
     <?php require_once('./ressources/includes/footer.php'); ?>

@@ -19,7 +19,7 @@
 .bulle .txt-grand span,
 .bulle .txt-petit span {
     display: inline-block;
-    background-color: white;
+    background-color: #fafafa;
     padding: 0.25rem;
     margin-bottom: 0.25rem;
 }
