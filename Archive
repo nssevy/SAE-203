@@ -312,3 +312,13 @@ $entite = $resultat->fetch_assoc();
 </body>
 
 </html>
+
+
+Lignes 317 archive des ancres a propos 9/juin/2025
+
+
+<ul class="liste-ancres">
+            <li><a href="./a-propos.php#presentation">Présentation</a></li>
+            <li><a href="./a-propos.php#sae">SAÉ</a></li>
+            <li class="dernier"><a href="./a-propos.php#exemple-sae">Exemples de SAÉ</a></li>
+        </ul>

@@ -10,6 +10,7 @@
         "Gérer un projet de communication numérique"
     ]
 ?>
+
 <article class="projet">
     <div class="img">
         <img src="ressources/images/SAE.jpg" alt="">

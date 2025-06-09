@@ -41,7 +41,7 @@ $article_vedette = mysqli_fetch_assoc($resultat_vedette);
     <!-- Vous allez principalement écrire votre code HTML ci-dessous -->
     <main class="conteneur-principal conteneur-1280">
         <!-- Le header de la page article titre + petite descritipon, (DESCRIPTION A MODIFIER) -->
-        <header class="flex flex-wrap place-content-between py-20">
+        <header class="flex place-content-between py-20">
             <h1 class="text-5xl font-semibold">Articles sur le BUT MMI</h1>
             <div class="w-1/2">
                 <p class="text-lg">Entre les cours, l’université et ses IUT proposent de nombreux lieux de convivialité ou d’idéation. Divers et variés, ils permettent aux étudiants, de toute formation, de découvrir de nouveaux horizons et surtout de rencontrer les étudiants d’autres BUT.</p>
@@ -61,7 +61,7 @@ $article_vedette = mysqli_fetch_assoc($resultat_vedette);
                         <div class="flex flex-col place-content-between gap-20">
                             <div class="textes flex flex-col gap-5">
                                 <h2 class="text-3xl"><?php echo $article_vedette['titre']; ?></h2>
-                                <p class="description text-base text-gray-500"><?php echo $article_vedette['chapo']; ?></p>
+                                <p class="description text-base text-gray-500 line-clamp-3"><?php echo $article_vedette['chapo']; ?></p>
                             </div>
                             <div class="flex w-full place-content-between">
                                 <p class="date h-fit text-gray-500">Publié le <?php echo $article_vedette ["date_creation"]; ?></p>
@@ -105,7 +105,7 @@ $article_vedette = mysqli_fetch_assoc($resultat_vedette);
                             <h2 class='text-2xl'>
                                 <?php echo $article["titre"]; ?>
                             </h2>
-                            <p class='description text-base text-gray-500'>
+                            <p class='description text-base text-gray-500 line-clamp-3'>
                                 <?php echo $article["chapo"]; ?>
                             </p>
                         </div>

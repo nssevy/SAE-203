@@ -39,7 +39,7 @@
                 |
             </li>
             <li>
-                <a href="#top" class="lien-admin">Remonter</a>
+                <a href="<?php echo $_SERVER['REQUEST_URI']; ?>#top" class="lien-admin">Remonter</a>
             </li>
         </ul>
 
