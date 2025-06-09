@@ -1,0 +1,155 @@
+.bulle {
+    position: relative;
+    margin-bottom: 6rem;
+    margin-top: 4.75rem;
+}
+
+.bulle .titre {
+    font-family: "Times New Roman", Times, serif;
+    text-align: end;
+    width: 50.78125%;
+    font-weight: bold;
+}
+
+.bulle .txt-grand {
+    font-size: 4.375rem;
+    color: black;
+}
+
+.bulle .txt-grand span,
+.bulle .txt-petit span {
+    display: inline-block;
+    background-color: white;
+    padding: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.bulle .txt-petit {
+    color: black;
+    font-size: 3.125rem;
+}
+
+.bulle-icone.rose {
+    background: #ff0084;
+    background: linear-gradient(
+      to right,
+      #ff0084,#33001b
+    );
+  }
+
+  /* https://gradient.page/ui-gradients/flickr */
+
+.bulle-icone.rouge {
+    background: #ED213A;
+    background: linear-gradient(
+      to right,
+      #ED213A,#93291E
+    );
+  }
+  /* https://gradient.page/ui-gradients/sin-city-red */
+  
+.bulle-icone.vert {
+    background: #348F50;
+    background: linear-gradient(
+      to right,
+      #348F50,#56B4D3
+    );
+  }
+  /* https://gradient.page/ui-gradients/emerald-water */
+
+.bulle-icone.jaune {
+    background: #ffe259;
+    background: linear-gradient(
+      to right,
+      #ffe259,#ffa751
+    );
+  }
+/* https://gradient.page/ui-gradients/mango */
+
+.bulle-icone.bleu {
+background: #1488CC;
+background: linear-gradient(
+    to right,
+    #1488CC,#2B32B2
+);
+}
+
+.bulle-icone.gris {
+  background: #283048;
+  background: linear-gradient(
+    to right,
+    #283048,#859398
+  );
+}
+/* https://gradient.page/ui-gradients/titanium */
+
+.bulle-icone {
+    position: absolute;
+    top: -46px;
+    right: 100px;
+    z-index: -1;
+    width: 634px;
+    height: 500px;
+    transition: opacity 0.2s, transform 0.3s;
+    
+    /* à la base ca ressemblait à ca */
+    /* mask: url("../../images/bulle.svg") no-repeat center / contain; */
+
+    mask: url("../images/bulle.svg") no-repeat center / contain;
+    -webkit-mask: url("../images/bulle.svg") no-repeat center / contain;
+    transform: translate(0, 0);
+    opacity: 1;
+
+    @starting-style {
+        opacity: 0.1;
+        transform: translate(5px, -6px);
+    }
+}
+
+.bulle-icone-bordure {
+    position: absolute;
+    top: -60px;
+    right: 62px;
+    z-index: -1;
+    width: 634px;
+    height: 510px;
+    transition: opacity 0.2s, transform 0.3s;
+    mask: url("../images/bulle-bordure.svg") no-repeat center / contain;
+    -webkit-mask: url("../images/bulle-bordure.svg") no-repeat center / contain;
+    mix-blend-mode: normal;
+    transform: translate(0, 0);
+    opacity: 1;
+
+    @starting-style {
+        opacity: 0.1;
+        transform: translate(-30px, 4px);
+    }
+}
+
+.bulle-icone-bordure.rose {
+    background-color: #a50253;
+}
+
+.bulle-icone-bordure.rouge {
+    background-color: #a50253;
+}
+
+.bulle-icone-bordure.vert {
+    background-color: #03886d;
+}
+
+.bulle-icone-bordure.jaune {
+    background-color: #ee8f00;
+}
+
+.bulle-icone-bordure.gris {
+    background-color: #c9c9c9;
+}
+
+.bulle:hover .bulle-icone-bordure {
+    transform: translate(-30px, 4px);
+}
+
+.bulle:hover .bulle-icone {
+    transform: translate(5px, -6px);
+}

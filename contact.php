@@ -55,7 +55,8 @@ if ($formulaire_soumis) {
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/reset.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/fonts.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
-    <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/header.css">
+    <link rel="stylesheet" href="./ressources/css/header-eleve.css">
+
 
     <link rel="stylesheet" href="./ressources/css/contact.css">
 </head>

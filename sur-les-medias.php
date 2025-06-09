@@ -22,6 +22,7 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/fonts.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/header.css">
+    <link rel="stylesheet" href="./ressources/css/header-eleve.css">
     <link rel="stylesheet" href="./ressources/css/sur-les-medias.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
@@ -41,8 +42,10 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
         <ul class="grid grid-cols-3 gap-5 pt-20">
 
         <?php while ($video = mysqli_fetch_array($resultat_brut)) { ?>
+            
             <li id="<?php echo $video["id"]; ?>" class="flex flex-col">
                 <a href="<?php echo htmlspecialchars ($video['link']); ?>" target="_blank">
+
                     <iframe class="w-full rounded-lg" height="388"
                         src="https://www.youtube.com/embed/<?php echo htmlspecialchars($video['youtube_id']); ?>"
                         title="YouTube video player"
@@ -57,13 +60,15 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
                             <?php echo htmlspecialchars($video["titre"]); ?>
                         </h2>
                     </div>
+
                 </a>
             </li>
+
         <?php } ?>
     </ul>
 
     </main>
-    
+
     <footer>
         <?php require_once('./ressources/includes/footer.php'); ?>  
     </footer>

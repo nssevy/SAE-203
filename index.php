@@ -26,8 +26,8 @@ $article = mysqli_fetch_assoc($resultat);
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/reset.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/fonts.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/global.css">
-    <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/header.css">
     <link rel="stylesheet" href="./ressources/css/ne-pas-modifier/accueil.css">
+    <link rel="stylesheet" href="./ressources/css/header-eleve.css">
     <link rel="stylesheet" href="./ressources/css/accueil.css">
     <link rel="stylesheet" href="./ressources/css/article-css.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -63,7 +63,7 @@ $article = mysqli_fetch_assoc($resultat);
                                 <p class="description text-base text-gray-500"><?php echo $article['chapo']; ?></p>
                             </div>
                             <div class="flex w-full place-content-between">
-                                <p>Publié le <?php echo $article ["date_creation"]; ?></p>
+                                <p class="date h-fit text-gray-500">Publié le <?php echo $article ["date_creation"]; ?></p>
                                 <button id="button" class="px-5 py-3 border border-gray-300 text-gray-300 rounded-full">Lire</button>
                             </div>
                         </div>
@@ -101,7 +101,7 @@ $article = mysqli_fetch_assoc($resultat);
                     elle va recevoir la valeur envoyée dans l'URL.
                     Vous pourrez récupérer la valeur en php grâce à $_GET["id"]
                 -->
-                    <!-- Pour midifier l'apparence (j'ai utiliser tailwind) c'est à partir d'ici, en haut c'est les parametres de la bdd -->
+                    <!-- Pour modifier l'apparence (j'ai utiliser tailwind) c'est à partir d'ici, en haut c'est les parametres de la bdd -->
                      <!-- Et j'ai utiliser grid -->
                     <div id="hover-card" class="flex flex-col gap-10 justify-between image-container">
 
