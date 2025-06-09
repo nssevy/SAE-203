@@ -9,9 +9,9 @@ $requete_brute = "SELECT * FROM auteur";
 $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
 
 $page_courante = "auteurs";
-$racine_URL = $_SERVER['REQUEST_URI'];
+$racine_URL = dirname($_SERVER['PHP_SELF']);
 
-$URL_creation = "{$racine_URL}/creation.php";
+$URL_creation = $racine_URL . "/creation.php";
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +25,7 @@ $URL_creation = "{$racine_URL}/creation.php";
 <body>
     <?php include_once '../ressources/includes/menu-principal.php'; ?>
     <header class="bg-white shadow">
+         <link rel="stylesheet" href="./ressources/creationadm.css">
         <div class="mx-auto max-w-7xl justify-between flex py-3 px-4">
             <div>
                 <p class="text-3xl font-bold text-gray-900">Liste auteurs</p>
@@ -56,7 +57,7 @@ $URL_creation = "{$racine_URL}/creation.php";
                     </thead>
                     <tbody>
                         <?php while ($element = mysqli_fetch_array($resultat_brut, MYSQLI_ASSOC)) {
-                            $lien_edition = "{$racine_URL}/edition.php?id={$element['id']}"; ?>
+                             $lien_edition = $racine_URL . "/edition.php?id=" . $element["id"]; ?>
                             <tr style="view-transition-name: auteur-<?php echo $element['id']; ?>" class="odd:bg-neutral-50 border-b-2 border-b-gray-100 last:border-b-0 first:border-t-2 first:border-t-gray-200">
                                 <td class="pl-8 p-4 font-bold" data-label="Id"><?php echo $element[
                                     'id'
@@ -78,7 +79,7 @@ $URL_creation = "{$racine_URL}/creation.php";
                                 <td class="pl-8 p-4" data-label="Twitter"><?php echo $element['lien_twitter']; ?></td>
                                 <td class="pl-8 p-4" data-label="">
                                     <a href="<?php echo $lien_edition; ?>" class='font-bold text-blue-600 hover:text-blue-900 focus:text-blue-900'>Éditer</a>
-                                    <a href='suppression.php?id=<?php echo $element["id"]; ?>' onclick="return confirm('Supprimer cet auteur ?');" class='font-bold text-red-600 hover:text-red-900 ml-4'>Supprimer</a>
+                                    <a href='<?php echo $racine_URL; ?>/suppression.php?id=<?php echo $element["id"]; ?>' onclick="return confirm('Supprimer cet auteur ?');" class='font-bold text-red-600 hover:text-red-900 ml-4'>Supprimer</a>
                                 </td>
                             </tr>
                         <?php } ?>

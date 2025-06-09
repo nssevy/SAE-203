@@ -17,15 +17,17 @@ if ($formulaire_soumis) {
             $_POST["lien_twitter"]
         )
     ) {
+       
+        $requete_brute = "
+            INSERT INTO auteur(prenom, nom, lien_avatar, lien_twitter)
+            VALUES ('$nom', '$prenom', '$lien_avatar', '$lien_twitter')
+        ";
+        
         $nom = htmlentities($_POST["nom"]);
         $prenom = htmlentities($_POST["prenom"]);
         $lien_avatar = htmlentities($_POST["lien_avatar"]);
         $lien_twitter = htmlentities($_POST["lien_twitter"]);
 
-        $requete_brute = "
-            INSERT INTO auteur(prenom, nom, lien_avatar, lien_twitter)
-            VALUES ('$nom', '$prenom', '$lien_avatar', '$lien_twitter')
-        ";
         $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
  
    

@@ -40,7 +40,7 @@ $URL_creation = $racine_URL . "/creation.php";
 
 <header class="bg-white shadow">
     <div class="mx-auto max-w-7xl py-3 px-4 justify-between flex">
-                <link rel="stylesheet" href="../ressources/creationadm.css">
+                <link rel="stylesheet" href="./ressources/creationadm.css">
         <div>
             <p class="text-3xl font-bold text-gray-900">Liste articles</p>
             <p class="text-gray-500 text-sm">Nombre d'articles : <?php echo mysqli_num_rows($resultat_brut); ?></p>
@@ -86,9 +86,7 @@ $URL_creation = $racine_URL . "/creation.php";
                     <td class="pl-8 p-4"><?php echo $element["auteur"] ?: "/"; ?></td>
                     <td class="pl-8 p-4">
                         <a href="<?php echo $lien_edition; ?>" class="font-bold text-blue-600 hover:text-blue-900 focus:text-blue-900">Éditer</a>
-                        <a href='suppression.php?id=<?php echo $element["id"]; ?>'onclick="return confirm('Supprimer cet article ?');" class='font-bold text-red-600 hover:text-red-900'>Supprimer</a>
-                    </td>
-                </tr>
+                        <a href="<?php echo $racine_URL; ?>/suppression.php?id=<?php echo $element['id']; ?>" onclick="return confirm('Supprimer cet article ?');" class='font-bold text-red-600 hover:text-red-900'>Supprimer</a>                </tr>
             <?php } ?>
             </tbody>
         </table>

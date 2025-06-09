@@ -1,13 +1,15 @@
 <?php
-require_once ('../../ressources/includes/connexion-bdd.php');
+require_once('../../ressources/includes/connexion-bdd.php');
+session_start();
+
 $page_courante = "auteurs";
 
 $entite = null;
 $formulaire_soumis = !empty($_POST);
-$id_present_url = array_key_exists('id', $_GET);
+$id_present_url = isset($_GET["id"]); 
+$id = isset($_GET["id"]) ? (int) $_GET["id"] : null;
 
 if ($id_present_url) {
-    $id = $_GET["id"];
     $requete_brute = "SELECT * FROM auteur WHERE id = $id";
     $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
     $entite = mysqli_fetch_array($resultat_brut, MYSQLI_ASSOC);
@@ -20,27 +22,25 @@ if ($formulaire_soumis) {
     $lien_avatar = htmlentities($_POST["lien_avatar"]);
     $lien_twitter = htmlentities($_POST["lien_twitter"]);
 
-
-
     $requete_update = "
-        UPDATE
+        UPDATE auteur
         SET
             nom = '$nom',
             prenom = '$prenom',
-            lien_avatar='$lien_avatar',
-            lien_twitter='$lien_twitter',
+            lien_avatar = '$lien_avatar',
+            lien_twitter = '$lien_twitter'
         WHERE id = '$id'
     ";
 
     $resultat_brut = mysqli_query($mysqli_link, $requete_update);
 
-   if ($resultat_brut) {
+    if ($resultat_brut) {
         $_SESSION['message_success'] = "L'auteur a été mis à jour.";
-        header("Location:../auteurs/index.php");
+        header("Location: ../auteurs/index.php");
         exit;
     } else {
         echo "Erreur MySQL : " . mysqli_error($mysqli_link);
-}
+    }
 }
 ?>
 
@@ -48,13 +48,13 @@ if ($formulaire_soumis) {
 <html lang="fr">
 
 <head>
-    <?php include_once '../ressources/includes/head.php'; ?>
+    <?php include_once ('../ressources/includes/head.php'); ?>
 
     <title>Editeur auteur - Administration</title>
 </head>
 
 <body>
-    <?php include_once '../ressources/includes/menu-principal.php'; ?>
+    <?php include_once ('../ressources/includes/menu-principal.php'); ?>
     <header style="view-transition-name: auteur-<?php echo $id; ?>"  class="bg-white shadow">
         <div class="mx-auto max-w-7xl py-3 px-4">
             <p class="text-3xl font-bold text-gray-900">Editer</p>
