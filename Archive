@@ -322,3 +322,18 @@ Lignes 317 archive des ancres a propos 9/juin/2025
             <li><a href="./a-propos.php#sae">SAÉ</a></li>
             <li class="dernier"><a href="./a-propos.php#exemple-sae">Exemples de SAÉ</a></li>
         </ul>
+
+
+
+
+
+
+
+        <section class="liste-projets">
+            <?php for ($i = 0; $i < 6; $i++) {
+                // On profite de le fonction "include" pour déporter notre code dans un autre fichier
+                // Et le structurer
+                include('./ressources/includes/exemple-sae.php');
+            } ?>
+
+        </section>

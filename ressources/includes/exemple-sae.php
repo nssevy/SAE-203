@@ -8,15 +8,32 @@
         "Produire un contenu audio et vidéo",
         "Produire un site Web",
         "Gérer un projet de communication numérique"
+    ];
+    $sujet = [
+        "Reportage vidéo sur un sujet libre",
+        "Keeqaid",
+        "Jolagreen",
+        "sherrif",
+        "leto",
+        "L2b gang fily"
+    ];
+    $image = [
+        "ressources/images/SAE.jpg",
+        "ressources/images/a-propos/Letter-1.svg",
+        // ajoutez encore d'autres images
     ]
 ?>
 
-<article class="projet">
-    <div class="img">
-        <img src="ressources/images/SAE.jpg" alt="">
+<li id="hover-card" href=; id="" class="flex flex-col gap-10 justify-between image-container">
+    <div class="flex flex-col gap-5">
+        <div class="w-full aspect-square overflow-hidden rounded-lg ">
+            <img class="w-full h-full object-cover" src="<?php echo $image[$i]; ?>" alt="">
+        </div>
+        <h3 class='text-2xl'>
+            <?php echo $listSAES[$i]; ?>
+        </h3>
+        <p class='description text-base text-gray-500 line-clamp-3'>
+            <?php echo $sujet[$i]; ?>
+        </p>
     </div>
-    <section class='textes'>
-        <h2 class="titre"><?php echo $listSAES[$i]; ?> • SAÉ <?php echo $numSAE; ?></h2>
-        <p class='paragraphe description'>Apprendre les bases du reportage vidéo sur un sujet libre</p>
-    </section>
-</article>
+</li>

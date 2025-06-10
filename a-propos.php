@@ -44,7 +44,7 @@ require_once('./ressources/includes/connexion-bdd.php');
 
         <section class="flex flex-col px-50 gap-50">
             <section id="presentation" class="flex flex-col gap-10 text-xl">
-                <h2 class="text gray-950 text-4xl">presentation</h2>
+                <h2 class="text gray-950 text-4xl">Presentation</h2>
                 <p>
                     Le BUT métiers du multimédia et de l'internet (MMI) remplace le DUT MMI à partir de la rentrée 2021, auparavant appelé DUT SRC (services et réseaux de communication) jusqu'en mai 2013, qui était lancé à la rentrée universitaire 1994 par les IUT de Vélizy, Marne-la-Vallée, Saint-Raphaël et Verdun. Ce BUT offre une alternative aux anciens diplômes Bac+3, tels que la licence professionnelle en activités et techniques de communication et la licence professionnelle en systèmes informatiques et logiciels.
                 </p>
@@ -84,25 +84,17 @@ require_once('./ressources/includes/connexion-bdd.php');
                 </p>
             </section>
 
-            <section id="presentation" class="flex flex-col gap-10 text-xl">
-                <h2 class="text gray-950 text-4xl" id="exemple-sae">Exemples de projets réalisés en SAÉ</h2>
-                <div class="flex flex-wrap">
-                    <?php for ($i = 0; $i < 6; $i++) {
+        </section>
+
+        <section class="pt-50">
+            <h2 id="exemple-sae" class="text gray-950 text-4xl">Exemples de SAÉ</h2>
+            <ul class="grid grid-cols-3 gap-10 py-10">
+                <?php for ($i = 0; $i < 6; $i++) {
                     // On profite de le fonction "include" pour déporter notre code dans un autre fichier
                     // Et le structurer
                     include('./ressources/includes/exemple-sae.php');
                 } ?>
-                </div>
-            </section>
-
-        </section>
-
-        <section class="liste-projets">
-            <?php for ($i = 0; $i < 6; $i++) {
-                // On profite de le fonction "include" pour déporter notre code dans un autre fichier
-                // Et le structurer
-                include('./ressources/includes/exemple-sae.php');
-            } ?>
+            </ul>
 
         </section>
     </main>
@@ -111,6 +103,7 @@ require_once('./ressources/includes/connexion-bdd.php');
         <?php require_once('./ressources/includes/footer.php'); ?>
     </footer>
 
+    <!-- Le truc en bas la  -->
     <div class="fixed bottom-0 left-0 w-full flex justify-center z-50 pb-4 ">
 
         <div class="flex gap-5 text-gray-50 bg-gray-800/50 backdrop-blur-3xl rounded-full px-5 py-3 ">
@@ -130,5 +123,7 @@ require_once('./ressources/includes/connexion-bdd.php');
     </div>
 
 </body>
+
+<script src="./ressources/javascript/image.hover.js"></script>
 
 </html>
