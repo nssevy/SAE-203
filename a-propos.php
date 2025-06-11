@@ -4,6 +4,7 @@ $page_active = "apropos";
 
 require_once('./ressources/includes/connexion-bdd.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -62,11 +63,9 @@ require_once('./ressources/includes/connexion-bdd.php');
                     <img src="ressources/images/SAE.jpg" alt="SAE">
                 </div>
 
-                <div>
-                    <p class="paragraphe">
-                        A CY Cergy Paris Université, il est donné la possibilité aux étudiants de passer un semestre au Québec à l'Université du Québec à Chicoutimi (UQAC) dans une formation dont le contenu est proche de celui proposé à l'IUT. Il est également possible d'effectuer ce semestre après avoir été diplômé. <span class="texte-gras">Attention : les cours sont dispensés en langue française.</span>
-                    </p>
-                </div>
+                <p class="paragraphe">
+                    A CY Cergy Paris Université, il est donné la possibilité aux étudiants de passer un semestre au Québec à l'Université du Québec à Chicoutimi (UQAC) dans une formation dont le contenu est proche de celui proposé à l'IUT. Il est également possible d'effectuer ce semestre après avoir été diplômé. <span class="texte-gras">Attention : les cours sont dispensés en langue française.</span>
+                </p>
 
             </section>
 
@@ -103,10 +102,10 @@ require_once('./ressources/includes/connexion-bdd.php');
         <?php require_once('./ressources/includes/footer.php'); ?>
     </footer>
 
-    <!-- Le truc en bas la  -->
+    <!-- table des matières  -->
     <div class="fixed bottom-0 left-0 w-full flex justify-center z-50 pb-4 ">
 
-        <div class="flex gap-5 text-gray-50 bg-gray-800/50 backdrop-blur-3xl rounded-full px-5 py-3 ">
+        <div class="flex gap-5 text-gray-50 bg-radial-[at_25%_25%] from-emerald-600/90 to-cyan-600/90 to-75% backdrop-blur-3xl rounded-full px-5 py-3 ">
 
             <button class=" transform transition-transform duration-200 hover:scale-103 "><a href="./a-propos.php#presentation">Présentation</a></button>
 
@@ -119,6 +118,8 @@ require_once('./ressources/includes/connexion-bdd.php');
 
             <button class=" transform transition-transform duration-200 hover:scale-103 "><a href="./a-propos.php#exemple-sae">Exemples de SAÉ</a></button>
         </div>
+
+    </div>
 
     </div>
 

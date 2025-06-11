@@ -40,7 +40,7 @@ require_once('./ressources/includes/connexion-bdd.php');
                 <p class="text-lg">Entre les cours, l’université et ses IUT proposent de nombreux lieux de convivialité ou d’idéation. Divers et variés, ils permettent aux étudiants, de toute formation, de découvrir de nouveaux horizons et surtout de rencontrer les étudiants d’autres BUT.</p>
             </div>
         </section>
-        <hr class="border-t-1 border-gray-200 left-1/2 -translate-x-1/2 absolute w-full"/>
+        <hr class="border-t-1 border-gray-200 pb-20 w-full"/>
 
         <section class="pt-20">
             <ul class="flex flex-col gap-20">

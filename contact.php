@@ -93,7 +93,7 @@ if ($formulaire_soumis) {
             </div>
         </header>
 
-        <hr class="border-t-1 border-gray-200 left-1/2 -translate-x-1/2 absolute w-full"/>
+        <hr class="border-t-1 border-gray-200 pb-20 w-full"/>
 
         <section class="pt-10">
             <p class="titre">Nous contacter en ligne</p>

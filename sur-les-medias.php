@@ -38,7 +38,7 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
                 <p class="text-lg">Les actualités et les évènements important du BUT et de l'IUT CY Paris Université dans les médias</p>
             </div>
         </section>
-        <hr class="border-t-1 border-gray-200 left-1/2 -translate-x-1/2 absolute w-full"/>
+        <hr class="border-t-1 border-gray-200 pb-20 w-full"/>
         <ul class="grid grid-cols-3 gap-5 pt-20">
 
         <?php while ($video = mysqli_fetch_array($resultat_brut)) { ?>
