@@ -11,7 +11,7 @@ $page_courante = "articles";
     $resultat_auteurs = mysqli_query($mysqli_link, $requete_auteurs);
     $auteurs = mysqli_fetch_all($resultat_auteurs, MYSQLI_ASSOC);
 
-// Traitement du formulaire ajout d'artiicle
+// Traitement du formulaire ajout d'article
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $titre = htmlentities($_POST["titre"]);
     $chapo = htmlentities($_POST["chapo"]);
@@ -47,6 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <?php include_once("../ressources/includes/head.php"); ?>
     <title>Créer un article</title>
+    <link rel="stylesheet" href="./adminitration/ressources/creationadm.css">
 </head>
 <body>
 <?php include_once '../ressources/includes/menu-principal.php'; ?>

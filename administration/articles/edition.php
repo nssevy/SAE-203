@@ -44,6 +44,7 @@ if ($result) {
 <head>
     <?php include_once("../ressources/includes/head.php"); ?>
     <title>Éditer article</title>
+    <link rel="stylesheet" href="./administration/ressources/creationadm.css">
 </head>
 <body>
 <?php include_once('../ressources/includes/menu-principal.php'); ?>

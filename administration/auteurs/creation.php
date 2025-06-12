@@ -47,8 +47,8 @@ if ($formulaire_soumis) {
 
 <head>
     <?php require_once('../ressources/includes/head.php'); ?>
-
     <title>Creation auteur - Administration</title>
+    <link rel="stylesheet" href="./administration/ressources/creationadm.css">
 </head>
 
 <body>

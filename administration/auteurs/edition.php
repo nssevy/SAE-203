@@ -49,8 +49,8 @@ if ($formulaire_soumis) {
 
 <head>
     <?php include_once ('../ressources/includes/head.php'); ?>
-
     <title>Editeur auteur - Administration</title>
+    <link rel="stylesheet" href="./administration/ressources/creationadm.css">
 </head>
 
 <body>

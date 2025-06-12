@@ -40,7 +40,7 @@ $URL_creation = $racine_URL . "/creation.php";
 
 <header class="bg-white shadow">
     <div class="mx-auto max-w-7xl py-3 px-4 justify-between flex">
-                <link rel="stylesheet" href="./ressources/creationadm.css">
+        <link rel="stylesheet" href="./administration/ressources/creationadm.css">
         <div>
             <p class="text-3xl font-bold text-gray-900">Liste articles</p>
             <p class="text-gray-500 text-sm">Nombre d'articles : <?php echo mysqli_num_rows($resultat_brut); ?></p>

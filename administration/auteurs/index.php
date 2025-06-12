@@ -20,6 +20,7 @@ $URL_creation = $racine_URL . "/creation.php";
 <head>
     <?php include_once "../ressources/includes/head.php"; ?>
     <title>Liste auteurs - Administration</title>
+    <link rel="stylesheet" href="./administration/ressources/creationadm.css">
 </head>
 
 <body>
