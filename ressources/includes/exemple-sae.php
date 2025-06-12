@@ -2,23 +2,22 @@
     // La variable i est récupérée depuis la boucle qui l'importe 
     $numSAE = 101 + $i;
     $listSAES = [
-        "Auditer une communication numérique", 
-        "Concevoir une recommandation de communication numérique", 
-        "Produire les éléments d’une communication visuelle",
-        "Produire un contenu audio et vidéo",
-        "Produire un site Web",
-        "Gérer un projet de communication numérique"
+        "Auditer une communication numérique • SAÉ 101", 
+        "Concevoir une recommandation de communication numérique • SAÉ 102", 
+        "Produire les éléments d'une communication visuelle • SAÉ 103",
+        "Produire un contenu audio et vidéo • SAÉ 104",
+        "Produire un site Web • SAÉ 105",
+        "Gérer un projet de communication numérique • SAÉ 106"
     ];
     $sujet = [
-        "Reportage vidéo sur un sujet libre",
-        "Keeqaid",
-        "Jolagreen",
-        "sherrif",
-        "leto",
-        "L2b gang fily"
+        "Comprendre les écosystèmes, les besoins des utilisateurs et les dispositifs de communication numérique",
+        "Concevoir ou co-concevoir une réponse stratégique pertinente à une problématique complexe",
+        "Exprimer un message avec les médias numériques pour informer et communique",
+        "Exprimer un message avec les médias numériques pour informer et communiquer",
+        "Développer pour le web et les médias numériques",
+        "Entreprendre dans le secteur du numérique",
     ];
     $image = [
-        "ressources/images/SAE.jpg",
         "ressources/images/SAE101.jpg",
         "ressources/images/SAE102.png",
         "ressources/images/SAE103.png",
