@@ -19,8 +19,12 @@
     ];
     $image = [
         "ressources/images/SAE.jpg",
-        "ressources/images/a-propos/Letter-1.svg",
-        // ajoutez encore d'autres images
+        "ressources/images/SAE101.jpg",
+        "ressources/images/SAE102.png",
+        "ressources/images/SAE103.png",
+        "ressources/images/SAE104.jpg",
+        "ressources/images/SAE105.png",
+        "ressources/images/SAE106.png",
     ]
 ?>
 
