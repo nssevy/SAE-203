@@ -11,6 +11,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 2rem;
+    
 }
 
 .redacteur {
@@ -25,11 +26,24 @@
     font-size: 1.5rem;
 }
 
+
+.redacteur:hover {
+  background-color: hsl(196, 65%, 95%); /* Léger bleu clair au survol */
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15); /* Ombre plus marquée */
+  transform: translateY(-4px); /* Léger effet de "soulèvement" */
+}
+
 .bulle-photo {
     width: 12rem; 
     height: 12rem;
     border-radius: 50%;
     border: 0.125rem solid hsl(196, 65%, 45%); 
     box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
 }
 
+.bulle-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+}

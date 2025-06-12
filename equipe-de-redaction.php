@@ -38,6 +38,7 @@ $resultat_brut = mysqli_query($mysqli_link, $requete_brute);
             <div class="redacteur">
                 <img class="bulle-photo" src="<?php echo $auteur["lien_avatar"]; ?>" alt="Photo de <?php echo $auteur["prenom"]; ?>">
                 <h2 class="titre_auteur"><?php echo $auteur["prenom"] . " " . $auteur["nom"]; ?></h2>
+                
             </div>
         <?php } ?>
     </div>
