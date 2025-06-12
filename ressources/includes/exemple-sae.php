@@ -12,7 +12,7 @@
     $sujet = [
         "Comprendre les écosystèmes, les besoins des utilisateurs et les dispositifs de communication numérique",
         "Concevoir ou co-concevoir une réponse stratégique pertinente à une problématique complexe",
-        "Exprimer un message avec les médias numériques pour informer et communique",
+        "Créer les éléments graphiques et visuels pour une campagne de communication",
         "Exprimer un message avec les médias numériques pour informer et communiquer",
         "Développer pour le web et les médias numériques",
         "Entreprendre dans le secteur du numérique",
