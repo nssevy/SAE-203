@@ -13,9 +13,11 @@ $page_courante = "articles";
 
 // Traitement du formulaire ajout d'article
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $titre = htmlentities($_POST["titre"]);
-    $chapo = htmlentities($_POST["chapo"]);
-    $lien = !empty($_POST["lien"]) ? "'" . htmlentities($_POST["lien"]) . "'" : "NULL";
+    $titre = ($_POST["titre"]);
+    $chapo = ($_POST["chapo"]);
+    $contenu = ($_POST["contenu"]);
+    $image = ($_POST["image"]);
+    $lien = !empty($_POST["lien"]) ? mysqli_real_escape_string($mysqli_link, $_POST["lien"]) : null;
     $auteur_id = (int) $_POST["auteur_id"];
     $date_creation = date('Y-m-d H:i:s');
 
@@ -27,8 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Requête d'insertion de l'article
         $requete = "
-            INSERT INTO article (titre, chapo, lien_yt, date_creation, auteur_id)
-            VALUES ('$titre', '$chapo', '$lien', '$date_creation', $auteur_id)
+            INSERT INTO article (titre, chapo, contenu, image ,lien_yt, date_creation, auteur_id)
+            VALUES ('$titre', '$chapo', '$contenu', '$image', '$lien', '$date_creation', $auteur_id)
         ";
         $resultat = mysqli_query($mysqli_link, $requete);
         if ($resultat) {
@@ -80,10 +82,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                <label for="contenu" class="block mb-1">Contenu*</label>
                <textarea id="contenu" name="contenu" class="w-full border p-2 rounded" required></textarea>
             </div>
+
+            <div class="mb-4">
+               <label for="image" class="block mb-1">image</label>
+               <textarea id="image" name="image" class="w-full border p-2 rounded" required></textarea>
+            </div>
             <div class="mb-4">
                 <label for="lien_ytb" class="block mb-1">Lien YouTube</label>
                 <input for="lien_ytb" type="text" name="lien" class="w-full border p-2 rounded" />
             </div>
+
             <div class="mb-4">
                 <label for="auteur_id" class="block mb-1">Auteur*</label>
                 <select id="auteur_id" name="auteur_id" class="w-full border p-2 rounded" required>

@@ -35,8 +35,10 @@
         <h3 class='text-2xl'>
             <?php echo $listSAES[$i]; ?>
         </h3>
-        <p class='description text-base text-gray-500 line-clamp-3'>
-            <?php echo $sujet[$i]; ?>
-        </p>
+        <div class="flex">
+            <p class='description text-base text-gray-500 line-clamp-3'>
+                <?php echo $sujet[$i]; ?>
+            </p>
+        </div>
     </div>
 </li>

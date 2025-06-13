@@ -16,15 +16,19 @@ if ($id) {
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $id = (int) $_POST["id"];
-    $titre = htmlentities($_POST["titre"]);
-    $chapo = htmlentities($_POST["chapo"]);
-    $contenu = htmlentities($_POST["contenu"]);
+    $titre = ($_POST["titre"]);
+    $chapo = ($_POST["chapo"]);
+    $contenu = ($_POST["contenu"]);
+    $image = ($_POST["image"]);
+    $lien = !empty($_POST["lien"]) ? mysqli_real_escape_string($mysqli_link, $_POST["lien"]) : null;
 
     $requete_update = "
         UPDATE article SET
             titre = '$titre',
             chapo = '$chapo',
             contenu = '$contenu'
+            image = '$image',
+            lien_yt = '$lien'
         WHERE id = $id
     ";
     $result = mysqli_query($mysqli_link, $requete_update);
@@ -69,6 +73,19 @@ if ($result) {
                 <label for="contenu" class="block mb-1">Contenu</label>
                 <textarea id="contenu" name="contenu" class="w-full border p-2 rounded"><?php echo $entite['contenu']; ?></textarea>
             </div>
+
+            <div class="mb-4">
+               <label for="image" class="block mb-1">image</label>
+               <textarea id="image" name="image" class="w-full border p-2 rounded"><?php echo $entite['image']; ?>
+               </textarea>
+            </div>
+
+            <div class="mb-4">
+               <label for="image" class="block mb-1">image</label>
+               <textarea id="image" name="image" class="w-full border p-2 rounded"><?php echo $entite['lien_yt']; ?>
+               </textarea>
+            </div>
+
             <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Enregistrer</button>
         </form>
     </div>

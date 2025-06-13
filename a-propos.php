@@ -86,7 +86,7 @@ require_once('./ressources/includes/connexion-bdd.php');
         </section>
 
         <section class="pt-50">
-            <h2 id="exemple-sae" class="text gray-950 text-4xl">Exemples de SAÉ</h2>
+            <h2 id="exemple-sae"  class="text gray-950 text-4xl">Exemples de SAÉ</h2>
             <ul class="grid grid-cols-3 gap-10 py-10">
                 <?php for ($i = 0; $i < 6; $i++) {
                     // On profite de le fonction "include" pour déporter notre code dans un autre fichier
@@ -94,7 +94,6 @@ require_once('./ressources/includes/connexion-bdd.php');
                     include('./ressources/includes/exemple-sae.php');
                 } ?>
             </ul>
-
         </section>
     </main>
 
@@ -124,7 +123,5 @@ require_once('./ressources/includes/connexion-bdd.php');
     </div>
 
 </body>
-
-<script src="./ressources/javascript/image.hover.js"></script>
 
 </html>

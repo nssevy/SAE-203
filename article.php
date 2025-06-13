@@ -110,6 +110,22 @@ $resultat_top3 = mysqli_query($mysqli_link, $requete_top3);
                 <?php else: ?>
                     <p class="contenu">Image non trouvé</p>
                 <?php endif; ?>
+
+                <!-- Lien ytb -->
+                <?php if (!empty($entite["lien_yt"])): ?>
+                <div class="contenu">
+                    <hr class="border-t-1 my-10 border-gray-200 w-full"/>
+                    <div class="flex flex-col gap-5">
+                        <p class="text-md text-gray-500">Pour en apprendre plus sur le sujet : </p>
+                        <a href="<?php echo htmlspecialchars($entite["lien_yt"]); ?>" target="_blank" class="text-blue-600 hover:text-blue-800 flex h-8">
+                            <div class="flex gap-2 bg-gray-200 w-fit rounded-full px-5">
+                                <img class="w-fit" src="ressources/images/logo_Youtube .png" alt="">
+                                <p>Vidéo ytb</p>
+                        </a>
+                    </div>
+                </div>
+                <?php endif; ?>
+
             </article>
         </section>
 
