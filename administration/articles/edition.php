@@ -58,16 +58,16 @@ if ($result) {
         <form method="POST" class="bg-white p-6 rounded shadow">
             <input type="hidden" name="id" value="<?php echo $entite['id']; ?>" />
             <div class="mb-4">
-                <label class="block mb-1">Titre</label>
-                <input name="titre" type="text" value="<?php echo $entite['titre']; ?>" class="w-full border p-2 rounded" />
+                <label for="titre" class="block mb-1">Titre</label>
+                <input id="titre" name="titre" type="text" value="<?php echo $entite['titre']; ?>" class="w-full border p-2 rounded" />
             </div>
             <div class="mb-4">
-                <label class="block mb-1">Chapô</label>
-                <textarea name="chapo" class="w-full border p-2 rounded"><?php echo $entite['chapo']; ?></textarea>
+                <label for="chapo" class="block mb-1">Chapô</label>
+                <textarea id="chapo" name="chapo" class="w-full border p-2 rounded"><?php echo $entite['chapo']; ?></textarea>
             </div>
             <div class="mb-4">
-                <label class="block mb-1">Contenu</label>
-                <textarea name="contenu" class="w-full border p-2 rounded"><?php echo $entite['contenu']; ?></textarea>
+                <label for="contenu" class="block mb-1">Contenu</label>
+                <textarea id="contenu" name="contenu" class="w-full border p-2 rounded"><?php echo $entite['contenu']; ?></textarea>
             </div>
             <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Enregistrer</button>
         </form>

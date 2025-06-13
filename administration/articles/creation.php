@@ -69,24 +69,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <form method="POST" class="bg-white p-6 rounded shadow">
             <div class="mb-4">
-                <label class="block mb-1">Titre*</label>
-                <input type="text" name="titre" class="w-full border p-2 rounded" required />
+                <label for="titre" class="block mb-1">Titre*</label>
+                <input id="titre" type="text" name="titre" class="w-full border p-2 rounded" required />
             </div>
             <div class="mb-4">
-                <label class="block mb-1">Chapô*</label>
-                <textarea name="chapo" class="w-full border p-2 rounded" required></textarea>
+                <label for="chapo" class="block mb-1">Chapô*</label>
+                <textarea id="chapo" name="chapo" class="w-full border p-2 rounded" required></textarea>
             </div>
             <div class="mb-4">
-               <label class="block mb-1">Contenu*</label>
-               <textarea name="contenu" class="w-full border p-2 rounded" required></textarea>
+               <label for="contenu" class="block mb-1">Contenu*</label>
+               <textarea id="contenu" name="contenu" class="w-full border p-2 rounded" required></textarea>
             </div>
             <div class="mb-4">
-                <label class="block mb-1">Lien YouTube</label>
-                <input type="text" name="lien" class="w-full border p-2 rounded" />
+                <label for="lien_ytb" class="block mb-1">Lien YouTube</label>
+                <input for="lien_ytb" type="text" name="lien" class="w-full border p-2 rounded" />
             </div>
             <div class="mb-4">
-                <label class="block mb-1">Auteur*</label>
-                <select name="auteur_id" class="w-full border p-2 rounded" required>
+                <label for="auteur_id" class="block mb-1">Auteur*</label>
+                <select id="auteur_id" name="auteur_id" class="w-full border p-2 rounded" required>
                     <option value="">-- Sélectionner --</option>
                     <?php foreach ($auteurs as $auteur): ?>
                         <option value="<?php echo $auteur['id']; ?>">
